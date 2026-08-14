@@ -80,7 +80,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Stats */}
       <section className="bg-black px-4 pb-24 sm:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 rounded-[2.5rem] border border-white/10 bg-neutral-800/60 p-10 sm:p-14 lg:grid-cols-4">
