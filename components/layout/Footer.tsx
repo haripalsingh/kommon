@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-center">
           <Image
-            src="/Logo.png"
+            src="/kommoncanvas-w-logo.png"
             alt="Kommon Canvas"
             width={2920}
             height={903}
