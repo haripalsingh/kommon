@@ -78,7 +78,7 @@ export default function FAQ() {
                   className={`transition-all duration-300 ${
                     open
                       ? "rounded-[2rem] bg-red-600 p-6 sm:p-8"
-                      : "rounded-full border-2 border-white/15 px-6 py-5 sm:px-8 sm:py-6"
+                      : "rounded-full border-2 border-white px-6 py-5 sm:px-8 sm:py-6"
                   }`}
                 >
                   <button
@@ -95,7 +95,7 @@ export default function FAQ() {
                         &minus;
                       </span>
                     ) : (
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-white/40 text-lg font-light leading-none text-white">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center  border-white/40 text-lg font-light leading-none text-white">
                         +
                       </span>
                     )}

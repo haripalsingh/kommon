@@ -132,9 +132,17 @@ export default function Footer() {
 
         <div className="mt-14 border-t border-white/15" />
 
-        {/* Middle: follow us + contact details */}
-        <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          <div>
+        {/* Middle: follow us + contact details — 4 equal-width columns with a
+            gray divider between each (divide-x only borders between
+            children, so there's no trailing divider after the last column).
+            lg:items-stretch (the grid default) makes every column fill the
+            row's full height so the dividers line up at equal length —
+            lg:items-center would size each divider to its own column's
+            content height instead, leaving the shorter columns' dividers
+            shorter than "Follow Us". Each column then centers its own
+            content vertically within that stretched height. */}
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
+          <div className="flex flex-col justify-center lg:pr-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-white">
               Follow Us
             </p>
@@ -146,7 +154,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-white hover:text-red-500"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:border-white hover:text-red-500"
                 >
                   {social.icon}
                 </a>
@@ -154,34 +162,40 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-10">
-            {contactDetails.map((detail) => {
-              const content = (
-                <>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 text-white">
-                    {detail.icon}
+          {contactDetails.map((detail, i) => {
+            const isLast = i === contactDetails.length - 1;
+            const content = (
+              <>
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 text-white">
+                  {detail.icon}
+                </span>
+                <span>
+                  <span className="block text-sm text-neutral-400">
+                    {detail.label}
                   </span>
-                  <span>
-                    <span className="block text-sm text-neutral-400">
-                      {detail.label}
-                    </span>
-                    <span className="block font-bold text-white">
-                      {detail.value}
-                    </span>
+                  <span className="block font-bold text-white">
+                    {detail.value}
                   </span>
-                </>
-              );
-              return detail.href ? (
-                <a key={detail.label} href={detail.href} className="flex items-center gap-3">
-                  {content}
-                </a>
-              ) : (
-                <div key={detail.label} className="flex items-center gap-3">
-                  {content}
-                </div>
-              );
-            })}
-          </div>
+                </span>
+              </>
+            );
+            return detail.href ? (
+              <a
+                key={detail.label}
+                href={detail.href}
+                className={`flex items-center gap-3 lg:pl-6 ${isLast ? "" : "lg:pr-6"}`}
+              >
+                {content}
+              </a>
+            ) : (
+              <div
+                key={detail.label}
+                className={`flex items-center gap-3 lg:pl-6 ${isLast ? "" : "lg:pr-6"}`}
+              >
+                {content}
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-10 border-t border-white/15" />

@@ -95,8 +95,20 @@ export default function AboutPage() {
         }
       />
 
+            {/* Full-width banner photo */}
+            <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
+              <Image
+                src="/projects/about-us.png"
+                alt="Kommon Canvas packaging design in the wild"
+                fill
+                sizes="100vw"
+                priority
+                className="object-cover"
+              />
+            </div>
+
       {/* Concept. Clarity. Character. Craft. Creation. */}
-      <section className="bg-black px-4 pb-24 sm:px-8">
+      <section className="bg-black px-4 pb-24 pt-24 sm:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60" />
 
@@ -157,8 +169,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-    
 
       <CTABanner />
     </div>

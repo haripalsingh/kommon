@@ -1,8 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const tools = [{ label: "Ps" }, { label: "Ai" }, { label: "Cdr" }, { label: "Xd" }, { label: "Id" }];
+// Real tool icons from public/logos, rather than hand-drawn letter badges —
+// keeps this list in sync with whatever's actually dropped in that folder.
+const tools = [
+  { label: "Photoshop", src: "/logos/ps.png" },
+  { label: "Illustrator", src: "/logos/ai.png" },
+  { label: "CorelDRAW", src: "/logos/cdr.png" },
+  { label: "XD", src: "/logos/xd.png" },
+  { label: "InDesign", src: "/logos/id.png" },
+  { label: "Figma", src: "/logos/figma.png" },
+];
 
 type Service = {
   title: string;
@@ -79,18 +89,6 @@ const entryRotation = [0, -16, 16, -16];
 
 // Scroll distance (px) devoted to the 3 card transitions while pinned.
 const SCROLL_BUFFER_PX = 900;
-
-function FigmaIcon() {
-  return (
-    <svg viewBox="0 0 38 57" className="h-7 w-auto">
-      <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1abcfe" />
-      <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0acf83" />
-      <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#ff7262" />
-      <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#f24e1e" />
-      <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#a259ff" />
-    </svg>
-  );
-}
 
 export default function WhatWeHelp() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -175,14 +173,17 @@ export default function WhatWeHelp() {
               {tools.map((tool) => (
                 <div
                   key={tool.label}
-                  className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-white/60 bg-white/5 text-lg font-bold text-white"
+                  className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-white/60 bg-white/5"
                 >
-                  {tool.label}
+                  <Image
+                    src={tool.src}
+                    alt={tool.label}
+                    width={40}
+                    height={40}
+                    className="h-8 w-8 object-contain"
+                  />
                 </div>
               ))}
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-white/60 bg-white/5">
-                <FigmaIcon />
-              </div>
             </div>
           </div>
 

@@ -26,7 +26,7 @@ export default function Hero() {
       {/* Content — aligned to the same max-w-7xl box as the header/nav */}
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center ">
         {/* Headline */}
-        <h1 className="relative z-0 w-full select-none text-center font-normal uppercase leading-[0.82] tracking-tight">
+        <h1 className="relative z-0 w-full select-none text-center font-normal uppercase leading-[0.82] tracking-tight mt-16">
           <span
             className="block text-[13vw] text-white transition-all duration-700 ease-out sm:text-[9vw] lg:text-[7.5rem]"
             style={{
@@ -72,7 +72,7 @@ export default function Hero() {
         {/* Bottom row: description + CTA */}
         <div className="relative z-20 mt-4 flex w-full flex-col items-start justify-between gap-8 sm:mt-2 sm:flex-row sm:items-end">
           <p
-            className="max-w-xs text-sm leading-relaxed text-neutral-300 transition-all duration-700 ease-out sm:text-base"
+            className="max-w-2/4 text-[30px] leading-relaxed text-neutral-300 transition-all duration-700 ease-out "
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(24px)",
@@ -80,8 +80,8 @@ export default function Hero() {
             }}
           >
         We build bold identities, <br/>
-<span className="text-[#FF0000]">packaging</span> & <span className="text-[#FF0000]">digital experiences</span> 
-for <br/> 
+<span className="text-[#FF0000]">packaging</span> & <span className="text-[#FF0000]">digital experiences &nbsp;</span> 
+for<br/> 
 brands that want to stand out.
           </p>
 

@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  // { name: "Contact", href: "/contact" },
 ];
 
 const tickerItems = [
@@ -20,6 +20,17 @@ const tickerItems = [
   "Social Media Design",
   "Print Design",
 ];
+
+// The marquee works by rendering two identical "groups" side by side and
+// animating translateX(0 -> -50%), so the second group seamlessly takes
+// the first group's place when the loop restarts. That only stays
+// seamless if each group is wider than the viewport — otherwise, on wide
+// screens, the animation runs out of content near the end of the cycle
+// and a blank gap shows before it loops. Repeating the item list several
+// times inside a single group keeps that group comfortably wider than
+// any real screen, so the loop never runs dry.
+const TICKER_REPEATS = 6;
+const tickerGroup = Array.from({ length: TICKER_REPEATS }, () => tickerItems).flat();
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -32,14 +43,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-black">
       {/* Scrolling ticker strip */}
       <div className="overflow-hidden bg-red-600">
-        <div className="flex w-max animate-[marquee_24s_linear_infinite] items-center py-2 text-white">
+        <div className="flex w-max animate-[marquee_144s_linear_infinite] items-center py-2 text-white">
           {[0, 1].map((dup) => (
             <div
               key={dup}
               className="flex shrink-0 items-center"
               aria-hidden={dup === 1 ? true : undefined}
             >
-              {tickerItems.map((item, i) => (
+              {tickerGroup.map((item, i) => (
                 <span
                   key={`${dup}-${i}`}
                   className="flex items-center whitespace-nowrap text-sm font-normal  tracking-wide text-white"
