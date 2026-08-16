@@ -165,9 +165,9 @@ export default function WhatWeHelp() {
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-12">
           {/* Left column */}
           <div>
-            <h2 className="text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl">
+            <h2 className="text-5xl  leading-[0.95] tracking-tight sm:text-6xl">
               <span className="block text-white">What We Help</span>
-              <span className="block text-red-600">You Shape&hellip;</span>
+              <span className="block font-extrabold text-red-600">You Shape&hellip;</span>
             </h2>
 
             <p className="mt-12 text-neutral-400">Tools that we use</p>

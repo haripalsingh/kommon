@@ -23,32 +23,24 @@ export default function LatestProjects() {
           </div>
         </div>
 
-        {/* Grid of 4 projects */}
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+        {/* Grid of 4 projects — image on top, caption always visible below */}
+        <div className="mt-14 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12">
           {projects.map((project) => (
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-              className="group relative aspect-[4/3] overflow-hidden rounded-3xl bg-neutral-900"
+              className="group flex flex-col gap-5"
             >
-              <Image
-                src={project.image}
-                alt={project.name}
-                fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex translate-y-3 items-end justify-between gap-3 p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-neutral-300">
-                    {project.category}
-                  </p>
-                  <p className="mt-1 text-xl font-bold text-white">
-                    {project.name}
-                  </p>
-                </div>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-600 text-white">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-neutral-900">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="absolute bottom-5 right-5 flex h-11 w-11 shrink-0 -translate-y-1 items-center justify-center rounded-full bg-red-600 text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -64,8 +56,44 @@ export default function LatestProjects() {
                   </svg>
                 </span>
               </div>
+
+              {/* Caption — always visible, shown after (below) the image */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-red-600">
+                  {project.category}
+                </p>
+                <p className="mt-1 text-xl font-bold text-white transition-colors group-hover:text-neutral-200 sm:text-2xl">
+                  {project.name}
+                </p>
+                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-neutral-400">
+                  {project.summary}
+                </p>
+              </div>
             </Link>
           ))}
+        </div>
+
+        {/* View all projects */}
+        <div className="mt-14 flex justify-center">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 text-base text-neutral-300 transition-colors hover:text-white sm:text-lg"
+          >
+            View All My Projects
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

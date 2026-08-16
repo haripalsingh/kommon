@@ -5,11 +5,11 @@ import { useState } from "react";
 const faqs = [
   {
     q: "How do we get started?",
-    a: "We begin with a discovery call to understand your brand, goals, target audience, and vision. From there, we recommend the right package and put together a tailored design roadmap.",
+    a: "We begin with a discovery call to understand your business, goals, target audience, and vision. From there, we create a tailored strategy and project roadmap.",
   },
   {
-    q: "What packages do you offer?",
-    a: "We offer packaging design, brand identity, and digital experience packages tailored to different budgets and timelines — from a single SKU refresh to a full brand system.",
+    q: "What services do you offer?",
+    a: "We offer packaging design, brand identity, and digital experience services tailored to different budgets and timelines — from a single SKU refresh to a full brand system.",
   },
   {
     q: "How long does a project take?",
@@ -20,14 +20,14 @@ const faqs = [
     a: "Yes — you'll review and give feedback at every major milestone, so the final design matches your vision before it goes to print.",
   },
   {
-    q: "Do I own the final files and designs?",
-    a: "Absolutely. Once the project is complete, you receive full ownership of all final files, source assets, and usage rights.",
+    q: "How many revisions are included?",
+    a: "Every package includes a set number of revision rounds, so we can refine the design together until it's exactly right.",
   },
 ];
 
 const features = [
   {
-    label: "Free 30-minute design consultation",
+    label: "Free 30-minute strategy call",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -36,7 +36,7 @@ const features = [
     ),
   },
   {
-    label: "Package recommendation based on your budget",
+    label: "Personalized project consultation",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <circle cx="12" cy="8" r="4" />
@@ -65,8 +65,8 @@ export default function FAQ() {
         <div>
           <h2 className="text-5xl font-extrabold text-white sm:text-6xl">FAQ</h2>
           <p className="mt-4 max-w-xl text-neutral-400">
-            Everything you need to know about our design packages before we get
-            started.
+            Everything you need to know before starting your branding
+            journey.
           </p>
 
           <div className="mt-10 flex flex-col gap-4">
@@ -75,8 +75,10 @@ export default function FAQ() {
               return (
                 <div
                   key={faq.q}
-                  className={`rounded-3xl p-6 transition-colors duration-300 sm:p-8 ${
-                    open ? "bg-red-600" : "bg-neutral-800/90"
+                  className={`transition-all duration-300 ${
+                    open
+                      ? "rounded-[2rem] bg-red-600 p-6 sm:p-8"
+                      : "rounded-full border-2 border-white/15 px-6 py-5 sm:px-8 sm:py-6"
                   }`}
                 >
                   <button
@@ -88,9 +90,15 @@ export default function FAQ() {
                     <span className="text-lg font-bold text-white sm:text-xl">
                       {faq.q}
                     </span>
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center text-2xl font-light leading-none text-white">
-                      {open ? "−" : "+"}
-                    </span>
+                    {open ? (
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center text-2xl font-light leading-none text-white">
+                        &minus;
+                      </span>
+                    ) : (
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-white/40 text-lg font-light leading-none text-white">
+                        +
+                      </span>
+                    )}
                   </button>
 
                   <div
@@ -113,7 +121,7 @@ export default function FAQ() {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-red-600 p-8 sm:p-10">
           <span
             aria-hidden
-            className="pointer-events-none absolute -top-6 right-4 select-none text-[9rem] font-black leading-none text-white/10 sm:text-[11rem]"
+            className="pointer-events-none absolute top-[17px]   right-[157px] select-none font-sans text-[9rem] font-normal leading-none text-white/40 sm:text-[11rem]"
           >
             ?
           </span>
@@ -123,12 +131,11 @@ export default function FAQ() {
           </h3>
 
           <p className="relative mt-8 text-2xl font-bold text-white">
-            Let&rsquo;s design a package that stands out.
+            Let&rsquo;s build something remarkable together.
           </p>
           <p className="relative mt-4 leading-relaxed text-red-50">
-            Whether you&rsquo;re launching a new product or refreshing your
-            packaging design, we&rsquo;re here to help you pick the right
-            package and bring it to shelf.
+            Whether you&rsquo;re starting from scratch or ready to elevate
+            your brand, we&rsquo;re here to guide you every step of the way.
           </p>
 
           <div className="relative mt-8 flex flex-col gap-5">
@@ -142,7 +149,7 @@ export default function FAQ() {
             ))}
           </div>
 
-          <form className="relative mt-10 flex items-center justify-between gap-3 rounded-full bg-red-800/50 py-2 pl-6 pr-2">
+          <form className="relative mt-10 flex items-center justify-between gap-3 rounded-full bg-[#494747] py-2 pl-6 pr-2">
             <input
               type="email"
               placeholder="Book a Free Discovery Call......"

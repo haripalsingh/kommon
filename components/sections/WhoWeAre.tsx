@@ -1,65 +1,46 @@
 import Link from "next/link";
 
+// const stats = [
+//   { value: "90+", label: "Happy Clients" },
+//   { value: "100+", label: "Projects Delivered" },
+//   { value: "5+", label: "Years of Experience" },
+//   { value: "10+", label: "Industries Served" },
+// ];
+
 export default function WhoWeAre() {
   return (
-    <section className="bg-black px-4 py-16 sm:px-8">
-      <div className="mx-auto max-w-7xl">
-        {/* View all projects */}
-        <div className="flex justify-center">
-          <Link
-            href="/work"
-            className="inline-flex items-center gap-2 text-base text-neutral-300 transition-colors hover:text-white sm:text-lg"
-          >
-            View All My Projects
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-
-        {/* Divider */}
-        <div className="mt-10 border-t border-white/10" />
-
-        {/* Who we are */}
-        <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center text-center">
-          <h2 className="text-5xl font-black italic uppercase tracking-tight text-white sm:text-7xl">
+    <>
+      {/* Section 1 — brand statement, styled to match the reference: centered
+          copy on a red panel with decorative doodles flanking the headline. */}
+      <section className="relative overflow-hidden bg-red-600 px-4 py-20 sm:px-8 sm:py-28">
+        {/* Decorative growth-chart doodle */}
+        
+        {/* Decorative stairs doodle */}
+        <div className="leftimage"></div>
+         
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+          <h2 className="text-5xl font-bold  uppercase tracking-tight text-white sm:text-7xl">
             Who We Are
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-neutral-300 sm:text-xl">
-            We help businesses grow through strategic branding, creative
-            design, and visual experiences that people remember.
+          <p className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
+            We Build Brands.
           </p>
-          <Link
-            href="/about"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-red-600 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-red-500"
-          >
-            Our Story
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
+          <div className="mt-6 flex h-1 w-24 overflow-hidden rounded-full">
+            <span className="w-1/2 bg-black" />
+            <span className="w-1/2 bg-white" />
+          </div>
+          <p className="mt-8 text-lg leading-relaxed text-white/90 sm:text-xl">
+            We are an independent creative agency helping businesses turn
+            ideas into powerful visual identities. From strategy and branding
+            to packaging and social media, we combine creativity with purpose
+            to create designs that connect with people and move businesses
+            forward.
+          </p>
         </div>
-      </div>
-    </section>
+         <div className="rightimage"></div>
+      </section>
+
+   
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import Clients from "@/components/sections/Clients";
+import ProductScroll from "@/components/sections/ProductScroll";
 import LatestProjects from "@/components/sections/LatestProjects";
 import WhoWeAre from "@/components/sections/WhoWeAre";
 import WhatWeHelp from "@/components/sections/WhatWeHelp";
@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-black font-sans">
       <Hero />
-      <Clients />
-      <LatestProjects />
+      <ProductScroll />
       <WhoWeAre />
       <WhatWeHelp />
+      <LatestProjects />
       <Testimonials />
       <FAQ />
     </div>
