@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const tickerItems = [
@@ -72,7 +73,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className={`text-[32px] font-normal  tracking-wide transition-colors ${
+                className={`text-[24px] font-normal  tracking-wide transition-colors ${
                   isActive(link.href) ? "text-white" : "text-white hover:text-white"
                 }`}
               >

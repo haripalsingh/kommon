@@ -1,193 +1,190 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-type Service = {
-  step: string;
-  title: string;
-  description: string;
-  image: string;
-};
-
-const services: Service[] = [
+const services = [
   {
-    step: "01",
-    title: "Brand Strategy",
-    description:
-      "We uncover your brand's purpose, positioning, and audience, then turn that clarity into a roadmap the rest of the design builds on.",
-    image: "/projects/pro-img05.png",
-  },
-  {
-    step: "02",
+    number: "01",
     title: "Brand Identity",
     description:
       "We build distinctive brand identities that bring your vision to life through strategy, design, and a consistent visual language.",
-    image: "/projects/pro-img10.png",
+    image: "/images/brand-identity.jpg",
   },
   {
-    step: "03",
-    title: "Packaging Design",
+    number: "02",
+    title: "Brand Identity",
     description:
       "We create packaging that catches attention, communicates value, and turns every product into a memorable brand experience.",
-    image: "/projects/pro-img11.png",
+    image: "/images/packaging.jpg",
   },
   {
-    step: "04",
-    title: "Digital Experience",
+    number: "03",
+    title: "Brand Identity",
     description:
       "We design scroll-stopping digital content that keeps your brand consistent, engaging, and visually relevant across every platform.",
-    image: "/projects/pro-img08.png",
+    image: "/images/digital-content.jpg",
   },
 ];
 
-const ServiceTimeline = () => {
-  const [active, setActive] = useState(0);
-  const [indicator, setIndicator] = useState({ top: 0, height: 0 });
-  const listContainerRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+export default function ServicesSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const lockedRef = useRef(false);
 
-  // Slide the red indicator to sit alongside whichever item is active,
-  // measuring real DOM heights so it works regardless of description length.
-  useLayoutEffect(() => {
-    const measure = () => {
-      const btn = itemRefs.current[active];
-      if (btn) {
-        setIndicator({ top: btn.offsetTop, height: btn.offsetHeight });
-      }
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [active]);
-
-  // Scrollspy: the numbered list scrolls inside its own box (see the
-  // .services-scroll thin red scrollbar), and whichever item sits in a
-  // band near the top of that box becomes active — same idea as the
-  // reference layout, driven by scrolling the list rather than hover.
   useEffect(() => {
-    const container = listContainerRef.current;
-    if (!container) return;
+    const handleWheel = (e: WheelEvent) => {
+      const section = sectionRef.current;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const index = itemRefs.current.findIndex((el) => el === entry.target);
-          if (index !== -1) setActive(index);
-        });
-      },
-      {
-        root: container,
-        rootMargin: "-10% 0px -70% 0px",
-        threshold: 0,
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+
+      // Only activate when section is visible
+      const sectionVisible =
+        rect.top <= window.innerHeight * 0.5 &&
+        rect.bottom >= window.innerHeight * 0.5;
+
+      if (!sectionVisible) return;
+
+      // Stop normal page scrolling
+      e.preventDefault();
+
+      if (lockedRef.current) return;
+
+      lockedRef.current = true;
+
+      if (e.deltaY > 0) {
+        // Scroll down
+        setActiveIndex((current) =>
+          Math.min(current + 1, services.length - 1)
+        );
+      } else {
+        // Scroll up
+        setActiveIndex((current) =>
+          Math.max(current - 1, 0)
+        );
       }
-    );
 
-    itemRefs.current.forEach((el) => {
-      if (el) observer.observe(el);
+      // Prevent changing multiple slides from one wheel movement
+      setTimeout(() => {
+        lockedRef.current = false;
+      }, 650);
+    };
+
+    window.addEventListener("wheel", handleWheel, {
+      passive: false,
     });
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
   }, []);
 
-  const activeService = services[active];
+  const activeService = services[activeIndex];
 
   return (
-    <section className="bg-black px-4 py-20 sm:px-8">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20">
-        {/* Numbered list — scrolls inside its own box; the item near the
-            top drives the red track + the preview on the right. */}
-        <div
-          ref={listContainerRef}
-          className="services-scroll h-[480px] overflow-y-auto pr-4 sm:h-[560px]"
-        >
-          <div className="flex gap-6 sm:gap-8">
-            <div className="relative w-1 shrink-0 rounded-full bg-white/15">
-              <span
-                className="absolute inset-x-0 rounded-full bg-red-600 transition-[top,height] duration-500 ease-out"
-                style={{ top: indicator.top, height: indicator.height }}
+    <section
+      ref={sectionRef}
+      className="flex min-h-screen items-center bg-[#050505] text-white"
+    >
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
+
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+
+          {/* LEFT */}
+          <div className="relative">
+
+            {/* Progress bar */}
+            <div className="absolute left-0 top-0 h-full w-3 rounded-full bg-[#d9d9d9]">
+              <div
+                className="w-full rounded-full bg-[#ff0808] transition-all duration-700 ease-out"
+                style={{
+                  height: `${((activeIndex + 1) / services.length) * 100}%`,
+                }}
               />
             </div>
 
-            <div className="flex flex-1 flex-col gap-10 sm:gap-12">
-              {services.map((service, i) => {
-                const isActive = i === active;
-                return (
-                  <button
-                    key={service.title}
-                    ref={(el) => {
-                      itemRefs.current[i] = el;
-                    }}
-                    type="button"
-                    onClick={() => {
-                      setActive(i);
-                      itemRefs.current[i]?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
-                    }}
-                    className="flex flex-col items-start rounded-2xl text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-                  >
-                    <span
-                      className={`text-3xl font-black transition-colors duration-300 sm:text-4xl ${
-                        isActive ? "text-red-600" : "text-white/35"
+            <div className="space-y-8 pl-12">
+
+              {services.map((service, index) => (
+                <div
+                  key={service.number}
+                  className="min-h-[150px] flex items-center"
+                >
+                  <div>
+
+                    <div
+                      className={`text-5xl font-bold leading-none transition-all duration-500 ${
+                        activeIndex === index
+                          ? "text-[#ff0808]"
+                          : "text-[#d9d9d9]"
                       }`}
                     >
-                      {service.step}
-                    </span>
+                      {service.number}
+                    </div>
+
                     <h3
-                      className={`mt-1 text-xl font-bold transition-colors duration-300 sm:text-2xl ${
-                        isActive ? "text-white" : "text-white/60"
+                      className={`mt-2 text-2xl font-bold transition-all duration-500 ${
+                        activeIndex === index
+                          ? "text-white"
+                          : "text-[#d9d9d9]"
                       }`}
                     >
                       {service.title}
                     </h3>
+
                     <p
-                      className={`mt-2 max-w-md text-sm leading-relaxed transition-colors duration-300 sm:text-base ${
-                        isActive ? "text-neutral-300" : "text-neutral-500"
+                      className={`mt-2 max-w-[450px] text-base leading-6 transition-all duration-500 ${
+                        activeIndex === index
+                          ? "text-white"
+                          : "text-[#999]"
                       }`}
                     >
                       {service.description}
                     </p>
-                  </button>
-                );
-              })}
+
+                  </div>
+                </div>
+              ))}
+
             </div>
           </div>
 
-          {/* Bottom buffer so the last item can still scroll up into the
-              active band near the top of the box. */}
-          <div aria-hidden className="h-32" />
-        </div>
+          {/* RIGHT */}
+          <div className="flex flex-col justify-center">
 
-        {/* Sticky preview panel */}
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <span className="block text-5xl font-black leading-none text-red-600 sm:text-6xl">
-            {activeService.step}
-          </span>
-          <h3 className="mt-2 text-3xl font-extrabold uppercase tracking-tight text-red-600 sm:text-4xl">
-            {activeService.title}
-          </h3>
+            <div
+              key={activeService.number}
+              className="animate-[fadeIn_.5s_ease]"
+            >
+              <div className="text-[72px] font-bold leading-none tracking-[-4px] text-[#ff0808]">
+                {activeService.number}
+              </div>
 
-          <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-[2rem] bg-neutral-800">
-            {services.map((service, i) => (
-              <Image
-                key={service.title}
-                src={service.image}
-                alt={service.title}
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className={`object-cover transition-opacity duration-500 ease-out ${
-                  i === active ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
+              <h2 className="mt-3 text-3xl font-bold leading-tight text-[#ff0808] md:text-[38px]">
+                {activeService.title}
+              </h2>
+
+              <div className="relative mt-5 aspect-[1.3/1] w-full max-w-[470px] overflow-hidden rounded-[20px] bg-[#d9d9d9]">
+                {services.map((service, index) => (
+                  <img
+                    key={service.number}
+                    src={service.image}
+                    alt={service.title}
+                    className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+                      activeIndex === index
+                        ? "scale-100 opacity-100"
+                        : "scale-105 opacity-0"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
           </div>
+
         </div>
       </div>
     </section>
   );
-};
-
-export default ServiceTimeline;
+}

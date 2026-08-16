@@ -97,6 +97,14 @@ body {
   background: #dc2626;
   border-radius: 9999px;
 }
+/* Chrome/Edge on Windows otherwise fall back to the OS's classic
+   up/down arrow buttons on a custom-colored scrollbar — hide them so
+   the thumb+track above is all that shows. */
+.services-scroll::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
 
 @keyframes marquee {
   from {
