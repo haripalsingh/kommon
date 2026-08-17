@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -8,21 +9,21 @@ const services = [
     title: "Brand Identity",
     description:
       "We build distinctive brand identities that bring your vision to life through strategy, design, and a consistent visual language.",
-    image: "/projects/brand-identity.png",
+    image: "https://aditechinfo.com/kommoncanvas/projects/brand-identity.png",
   },
   {
     number: "02",
     title: "Packaging Design",
     description:
       "We create packaging that catches attention, communicates value, and turns every product into a memorable brand experience.",
-    image: "/projects/packaging-design.png",
+    image: "https://aditechinfo.com/kommoncanvas/projects/packaging-design.png",
   },
   {
     number: "03",
     title: "Creative Partnership",
     description:
       "We design scroll-stopping digital content that keeps your brand consistent, engaging, and visually relevant across every platform.",
-    image: "/projects/creative-partnership.png",
+    image: "https://aditechinfo.com/kommoncanvas/projects/creative-partnership.png",
   },
 ];
 

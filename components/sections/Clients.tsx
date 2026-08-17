@@ -1,3 +1,4 @@
+import Image from "next/image";
 const logos = [
   { src: "/logos/our-client-logo01.svg", alt: "Client logo" },
   { src: "/logos/our-client-logo02.svg", alt: "Client logo" },
@@ -30,7 +31,7 @@ export default function Clients() {
           <div className="flex w-max animate-[marquee_28s_linear_infinite] items-center gap-16 hover:[animation-play-state:paused]">
             {[...logos, ...logos].map((logo, i) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 key={`${logo.src}-${i}`}
                 src={logo.src}
                 alt={logo.alt}

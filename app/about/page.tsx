@@ -98,7 +98,7 @@ export default function AboutPage() {
             {/* Full-width banner photo */}
             <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
               <Image
-                src="/projects/about-us.png"
+                src="https://aditechinfo.com/kommoncanvas/projects/about-us.png"
                 alt="Kommon Canvas packaging design in the wild"
                 fill
                 sizes="100vw"

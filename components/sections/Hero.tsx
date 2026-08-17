@@ -59,7 +59,7 @@ export default function Hero() {
         >
           <div style={{ animation: mounted ? "float-y 5s ease-in-out infinite" : "none" }}>
             <Image
-              src="/girl-element.png"
+              src="https://aditechinfo.com/kommoncanvas/girl-element.png"
               alt="Hi, I am Khushi Tyagi, Founder of Kommon Canvas"
               width={1000}
               height={987}

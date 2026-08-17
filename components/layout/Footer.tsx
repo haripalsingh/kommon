@@ -91,7 +91,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-14">
           <div>
             <Image
-              src="/kommoncanvas-w-logo.png"
+              src="https://aditechinfo.com/kommoncanvas/kommoncanvas-w-logo.png"
               alt="Kommon Canvas"
               width={2920}
               height={903}

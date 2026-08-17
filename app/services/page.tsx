@@ -43,7 +43,7 @@ export default function ServicesPage() {
       {/* Full-width banner photo */}
       <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
         <Image
-          src="/projects/services-header.png"
+          src="https://aditechinfo.com/kommoncanvas/projects/services-header.png"
           alt="Kommon Canvas packaging design in the wild"
           fill
           sizes="100vw"

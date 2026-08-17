@@ -69,7 +69,7 @@ export default function Header() {
           {/* Logo — pinned left */}
           <Link href="/" className="flex flex-1 items-center">
             <Image
-              src="/kommoncanvas-w-logo.png"
+              src="https://aditechinfo.com/kommoncanvas/kommoncanvas-w-logo.png"
               alt="Kommon Canvas"
               width={280}
               height={89}
