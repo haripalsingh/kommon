@@ -86,7 +86,7 @@ const Ourlatestwork = () => {
           >
             <Image
               src={project.imagess}
-             // alt={project.name}
+             alt={project.name}
               fill
               sizes="(min-width: 640px) 288px, 256px"
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
