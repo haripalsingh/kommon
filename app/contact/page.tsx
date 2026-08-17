@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import ContactForm from "@/components/sections/ContactForm";
+import Container from "@/components/layout/Container";
 
 const title = "Contact";
 const description =
@@ -76,8 +77,8 @@ export default function ContactPage() {
         description="Let's Build Something Meaningful"
       />
 
-      <section className="bg-black px-4 pb-24 sm:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+      <section className="bg-black pb-24">
+        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           {/* Intro + highlights */}
           <div className="flex flex-col">
             <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
@@ -108,7 +109,7 @@ export default function ContactPage() {
 
           {/* Form */}
           <ContactForm />
-        </div>
+        </Container>
       </section>
     </div>
   );

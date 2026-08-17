@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Container from "@/components/layout/Container";
 
 type PageHeroProps = {
   eyebrow?: string;
@@ -17,8 +18,8 @@ export default function PageHero({
   title,
 }: PageHeroProps) {
   return (
-    <section className="bg-black px-4 pb-16 pt-16 sm:px-8 sm:pt-24">
-      <div className="mx-auto max-w-7xl text-center uppercase">
+    <section className="bg-black pb-16 pt-16 sm:pt-24">
+      <Container className="text-center uppercase">
         {eyebrow && (
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
             {eyebrow}
@@ -39,7 +40,7 @@ export default function PageHero({
             {description}
           </p>
         )}
-      </div>
+      </Container>
     </section>
   );
 }

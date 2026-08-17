@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import CTABanner from "@/components/sections/CTABanner";
+import Container from "@/components/layout/Container";
 
 const title = "About Us";
 const description =
@@ -108,8 +109,8 @@ export default function AboutPage() {
             </div>
 
       {/* Concept. Clarity. Character. Craft. Creation. */}
-      <section className="bg-black px-4 pb-24 pt-24 sm:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+      <section className="bg-black pb-24 pt-24">
+        <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
 
           <div className="lg:col-span-8">
@@ -126,12 +127,12 @@ export default function AboutPage() {
               communicate clearly, and leave a lasting impression.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* What We Don't Do / What We Do */}
-      <section className="bg-[#ff0000] px-4 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-white/20">
+      <section className="bg-[#ff0000] py-20 sm:py-28">
+        <Container className="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-white/20">
           <div className="sm:pr-12 lg:pr-16">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Don&rsquo;t Do
@@ -167,7 +168,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       <CTABanner />

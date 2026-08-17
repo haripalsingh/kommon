@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Container from "@/components/layout/Container";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -64,15 +65,15 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="px-4 py-5 sm:px-8">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+      <div className="py-5">
+        <Container className="flex items-center justify-between gap-4">
           {/* Logo — pinned left */}
           <Link href="/" className="flex flex-1 items-center">
             <Image
-              src="https://aditechinfo.com/kommoncanvas/kommoncanvas-w-logo.png"
+              src="https://aditechinfo.com/kommoncanvas/logo.svg"
               alt="Kommon Canvas"
-              width={280}
-              height={89}
+              width={180}
+              height={39}
               priority
             />
           </Link>
@@ -84,7 +85,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className={`text-[24px] font-normal  tracking-wide transition-colors ${
+                className={`text-[18px] font-normal  tracking-wide transition-colors ${
                   isActive(link.href) ? "text-white" : "text-white hover:text-[#ff0000]"
                 }`}
               >
@@ -141,11 +142,11 @@ export default function Header() {
               )}
             </button>
           </div>
-        </div>
+        </Container>
 
         {/* Mobile nav panel */}
         {open && (
-          <div className="mx-auto mt-2 flex max-w-7xl flex-col gap-1 rounded-3xl border border-white/10 bg-neutral-900/95 p-4 backdrop-blur lg:hidden">
+          <Container className="mt-2 flex flex-col gap-1 rounded-3xl border border-white/10 bg-neutral-900/95 p-4 backdrop-blur lg:hidden">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -166,7 +167,7 @@ export default function Header() {
             >
               Book a Call
             </Link>
-          </div>
+          </Container>
         )}
       </div>
     </header>

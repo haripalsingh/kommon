@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 import CTABanner from "@/components/sections/CTABanner";
+import Container from "@/components/layout/Container";
 import { projects } from "@/lib/projects";
 
 const title = "Our Work";
@@ -39,8 +40,8 @@ export default function WorkPage() {
         }
       />
 
-      <section className="bg-black px-4 pb-24 sm:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14">
+      <section className="bg-black pb-24">
+        <Container className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14">
           {projects.map((project) => (
             <Link
               key={project.slug}
@@ -87,7 +88,7 @@ export default function WorkPage() {
               </div>
             </Link>
           ))}
-        </div>
+        </Container>
       </section>
 
       <CTABanner />

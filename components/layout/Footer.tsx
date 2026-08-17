@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/layout/Container";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -85,8 +86,8 @@ const contactDetails = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black px-4 pb-10 pt-16 sm:px-8">
-      <div className="mx-auto max-w-7xl">
+    <footer className="bg-black pb-10 pt-16">
+      <Container>
         {/* Top: logo + blurb / newsletter card */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-14">
           <div>
@@ -222,7 +223,7 @@ export default function Footer() {
             Where Ideas Meet Creativity.
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

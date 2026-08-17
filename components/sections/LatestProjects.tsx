@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import Container from "@/components/layout/Container";
 
 // "Our Work" homepage teaser — a fixed 2x2 grid of featured project shots
 // (matching the "Latest Projects" layout), linking through to the full
@@ -13,7 +14,7 @@ const featured = featuredSlugs
 export default function LatestProjects() {
   return (
     <section className="bg-black py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+      <Container>
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl">
@@ -66,7 +67,7 @@ export default function LatestProjects() {
             </svg>
           </Link>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

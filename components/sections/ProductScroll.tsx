@@ -7,7 +7,7 @@ const loopProjects = [...projects, ...projects];
 
 export default function ProductScroll() {
   return (
-    <section className="overflow-hidden bg-black py-16 sm:py-20">
+    <section className="overflow-hidden bg-black pt-0 pb-16 sm:pb-20">
       {/* <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-4xl font-extrabold uppercase tracking-tight sm:text-6xl">

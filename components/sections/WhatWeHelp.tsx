@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Container from "@/components/layout/Container";
 
 // Real tool icons from public/logos, rather than hand-drawn letter badges —
 // keeps this list in sync with whatever's actually dropped in that folder.
@@ -158,9 +159,9 @@ export default function WhatWeHelp() {
     >
       <div
         ref={stickyRef}
-        className="sticky top-0 flex items-center px-4 py-16 sm:px-8 sm:py-24"
+        className="sticky top-0 flex items-center py-16 sm:py-24"
       >
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-12">
+        <Container className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-12">
           {/* Left column */}
           <div>
             <h2 className="text-5xl  leading-[0.95] tracking-tight sm:text-6xl">
@@ -244,7 +245,7 @@ export default function WhatWeHelp() {
               );
             })}
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

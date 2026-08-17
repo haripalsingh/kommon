@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { projects } from "@/lib/projects";
+import Container from "@/components/layout/Container";
 
 // "Our Work" teaser for the services page — heading + "View More Projects"
 // link on top, a horizontally scrollable, auto-advancing row of project
@@ -40,7 +41,7 @@ const Ourlatestwork = () => {
 
   return (
     <section className="overflow-hidden bg-black ">
-      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+      <Container>
         {/* Heading row */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <h2 className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-6xl">
@@ -66,7 +67,7 @@ const Ourlatestwork = () => {
             </svg>
           </Link>
         </div>
-      </div>
+      </Container>
 
       {/* Full-bleed, edge-to-edge horizontally scrolling row of project cards.
           Auto-advances one card every 2s, loops back to the start at the end,

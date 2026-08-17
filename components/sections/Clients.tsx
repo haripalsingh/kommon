@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Container from "@/components/layout/Container";
 const logos = [
   { src: "/logos/our-client-logo01.svg", alt: "Client logo" },
   { src: "/logos/our-client-logo02.svg", alt: "Client logo" },
@@ -14,8 +15,8 @@ const logos = [
 
 export default function Clients() {
   return (
-    <section className="bg-black px-4 py-16 sm:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-10 sm:flex-row sm:items-center">
+    <section className="bg-black py-16">
+      <Container className="flex flex-col items-start gap-10 sm:flex-row sm:items-center">
         {/* Stat */}
         <div className="shrink-0">
           <p className="text-6xl font-extrabold leading-none text-red-600 sm:text-7xl">
@@ -40,7 +41,7 @@ export default function Clients() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

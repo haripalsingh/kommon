@@ -38,7 +38,7 @@ body {
 }
 .header::before  {
   pointer-events: none;
-  background-image: url('/header-bg.png');
+  background-image: url('https://aditechinfo.com/kommoncanvas/header-bg.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -54,7 +54,7 @@ body {
 
 
 .leftimage{
-    background-image: url('/who-are-left.png');
+    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-left.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

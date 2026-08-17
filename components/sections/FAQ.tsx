@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Container from "@/components/layout/Container";
 
 const faqs = [
   {
@@ -59,8 +60,8 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-black px-4 py-20 sm:px-8">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+    <section className="bg-black py-20">
+      <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* Left: heading + accordion */}
         <div>
           <h2 className="text-5xl font-extrabold text-white sm:text-6xl">FAQ</h2>
@@ -176,7 +177,7 @@ export default function FAQ() {
             </button>
           </form>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

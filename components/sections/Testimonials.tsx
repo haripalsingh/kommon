@@ -1,3 +1,5 @@
+import Container from "@/components/layout/Container";
+
 const testimonials = [
   {
     quote:
@@ -43,7 +45,7 @@ const loopTestimonials = [...testimonials, ...testimonials];
 export default function Testimonials() {
   return (
     <section className="overflow-hidden bg-black py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+      <Container>
         {/* Heading */}
         <div className="flex flex-col items-center text-center">
           <h2 className="text-4xl font-extrabold uppercase tracking-tight sm:text-6xl">
@@ -55,7 +57,7 @@ export default function Testimonials() {
             <span className="w-1/2 bg-white" />
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Infinite scrolling row of testimonial cards — no arrows/dots, just continuous motion */}
       <div className="relative mt-14 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
