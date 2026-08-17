@@ -49,99 +49,67 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   const currentIndex = projects.findIndex((p) => p.slug === slug);
   const nextProject = projects[(currentIndex + 1) % projects.length];
+  const gallery = project.images?.length ? project.images : [project.image];
 
   return (
     <div className="flex flex-1 flex-col bg-black font-sans">
-      <section className="px-4 pb-10 pt-16 sm:px-8 sm:pt-24">
-        <div className="mx-auto max-w-7xl">
-          <Link
-            href="/work"
-            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-neutral-400 transition-colors hover:text-white"
+      {/* Centered hero — name, tagline, accent divider */}
+      <section className="flex flex-col items-center px-4 pb-10 pt-14 text-center sm:px-8 sm:pt-20">
+        <Link
+          href="/work"
+          className="mb-8 inline-flex items-center gap-2 self-start text-sm font-semibold uppercase tracking-wide text-neutral-400 transition-colors hover:text-white sm:self-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-4 w-4"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            All Projects
-          </Link>
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          All Projects
+        </Link>
 
-          <p className="mt-8 text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
-            {project.category}
-          </p>
-          <h1 className="mt-4 text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-7xl">
-            {project.name}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400">
-            {project.summary}
-          </p>
+        <h1 className="text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
+          {project.name}
+        </h1>
+        <p className="mt-4 text-lg text-neutral-300 sm:text-xl">{project.tagline}</p>
+
+        <div className="mt-6 flex h-[3px] w-24 overflow-hidden rounded-full">
+          <span className="h-full w-1/2 bg-[#ff0000]" />
+          <span className="h-full w-1/2 bg-white/30" />
         </div>
       </section>
 
-      <section className="px-4 sm:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem]">
-          <Image
-            src={project.image}
-            alt={project.name}
-            width={1600}
-            height={1200}
-            className="h-auto w-full object-cover"
-            priority
-          />
+      {/* Full image sequence — one after another, full width, no gaps */}
+      <section className="bg-black">
+        <div className="flex w-full flex-col">
+          {gallery.map((src, index) => (
+            <div key={src} className="block w-full overflow-hidden bg-neutral-900 leading-none">
+              <Image
+                src={src}
+                alt={`${project.name} — image ${index + 1}`}
+                width={1600}
+                height={1200}
+                sizes="100vw"
+                className="block h-auto w-full object-cover"
+                style={{ width: "100%" }}
+                priority={index === 0}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="bg-black px-4 py-16 sm:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-          <div>
-            <h2 className="text-2xl font-extrabold text-white">
-              About the project
-            </h2>
-            <p className="mt-4 leading-relaxed text-neutral-300">
-              {project.description}
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <div className="rounded-3xl border border-white/10 bg-neutral-800/90 p-6">
-              <p className="text-sm text-neutral-400">Client</p>
-              <p className="mt-1 text-lg font-bold text-white">
-                {project.client}
-              </p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-neutral-800/90 p-6">
-              <p className="text-sm text-neutral-400">Year</p>
-              <p className="mt-1 text-lg font-bold text-white">
-                {project.year}
-              </p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-neutral-800/90 p-6">
-              <p className="text-sm text-neutral-400">Services</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {project.services.map((service) => (
-                  <span
-                    key={service}
-                    className="rounded-full border border-white/30 px-3 py-1.5 text-xs font-semibold text-white"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* Next project */}
       <section className="bg-black px-4 pb-4 sm:px-8">
-        <div className="mx-auto max-w-7xl border-t border-white/10 pt-10">
+        <div className="mx-auto max-w-5xl border-t border-white/10 pt-10">
           <Link
             href={`/work/${nextProject.slug}`}
             className="group flex items-center justify-between gap-4"
@@ -152,7 +120,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {nextProject.name}
               </p>
             </div>
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-red-600 text-white transition-transform group-hover:translate-x-1">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#ff0000] text-white transition-transform group-hover:translate-x-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

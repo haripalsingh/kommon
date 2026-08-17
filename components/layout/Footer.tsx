@@ -6,6 +6,7 @@ const navLinks = [
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
+   { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -103,7 +104,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-red-600 p-8 sm:p-10">
+          <div className="rounded-[2rem] bg-[#ff0000] p-8 sm:p-10">
             <h3 className="text-4xl font-bold text-white sm:text-5xl">
               Stay Inspired
             </h3>
@@ -154,7 +155,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:border-white hover:text-red-500"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:border-[#ff0000] hover:text-[#ff0000]"
                 >
                   {social.icon}
                 </a>
@@ -166,7 +167,7 @@ export default function Footer() {
             const isLast = i === contactDetails.length - 1;
             const content = (
               <>
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 text-white">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ff0000] text-white">
                   {detail.icon}
                 </span>
                 <span>
@@ -207,7 +208,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-neutral-300 transition-colors hover:text-white"
+                className="text-sm font-semibold uppercase tracking-wide text-neutral-300 transition-colors hover:text-[#ff0000]"
               >
                 {link.name}
               </Link>

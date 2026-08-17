@@ -5,7 +5,7 @@ import { projects } from "@/lib/projects";
 // "Our Work" homepage teaser — a fixed 2x2 grid of featured project shots
 // (matching the "Latest Projects" layout), linking through to the full
 // /work page. "View More Projects" sits centered below the grid.
-const featuredSlugs = ["millet-matters", "wild-orchard", "one-tree", "swap"];
+const featuredSlugs = ["tmug", "sugar-whisk", "gola-gully", "golki"];
 const featured = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is NonNullable<typeof project> => Boolean(project));
@@ -20,7 +20,7 @@ export default function LatestProjects() {
            Latest Projects
           </h2>
            <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full mx-auto">
-            <span className="w-1/2 bg-red-600" />
+            <span className="w-1/2 bg-[#ff0000]" />
             <span className="w-1/2 bg-white" />
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function LatestProjects() {
             href="/work"
             className="group inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-red-600 sm:text-base"
           >
-        Vew All My Projects
+            View All Projects
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

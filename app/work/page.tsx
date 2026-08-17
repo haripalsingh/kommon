@@ -56,7 +56,7 @@ export default function WorkPage() {
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="absolute bottom-5 right-5 flex h-11 w-11 shrink-0 -translate-y-1 items-center justify-center rounded-full bg-red-600 text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="absolute bottom-5 right-5 flex h-11 w-11 shrink-0 -translate-y-1 items-center justify-center rounded-full bg-[#ff0000] text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

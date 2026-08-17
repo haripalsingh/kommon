@@ -86,7 +86,7 @@ export default function ContactPage() {
               <span className="text-red-600">Next Project!</span>
             </h2>
 
-            <p className="mt-6 max-w-md leading-relaxed text-neutral-400">
+            <p className="mt-6  text-[24px] leading-relaxed text-white">
               Have a project in mind or just want to explore possibilities?
               We&rsquo;d love to hear from you. Share your ideas with us and
               let&rsquo;s create something impactful together.
@@ -95,7 +95,7 @@ export default function ContactPage() {
             <div className="mt-10 flex flex-col gap-5">
               {highlights.map((item) => (
                 <div key={item.title} className="flex items-center gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-600 text-white">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ff0000] text-white">
                     {item.icon}
                   </span>
                   <span className="text-lg font-semibold text-white">

@@ -109,16 +109,16 @@ export default function AboutPage() {
 
       {/* Concept. Clarity. Character. Craft. Creation. */}
       <section className="bg-black px-4 pb-24 pt-24 sm:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60" />
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
 
-          <div>
-            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+          <div className="lg:col-span-8">
+            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl text-right">
               Concept. Clarity.
               <br />
               Character. Craft. Creation.
             </h2>
-            <p className="mt-6 leading-relaxed text-neutral-300">
+            <p className="mt-6 leading-relaxed text-neutral-300  text-right">
               At Kommon Canvas, we turn ideas into distinctive brand
               experiences through strategy, creativity, and thoughtful
               design. From concept to execution, every detail is crafted
@@ -130,7 +130,7 @@ export default function AboutPage() {
       </section>
 
       {/* What We Don't Do / What We Do */}
-      <section className="bg-red-600 px-4 py-20 sm:px-8 sm:py-28">
+      <section className="bg-[#ff0000] px-4 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-white/20">
           <div className="sm:pr-12 lg:pr-16">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">

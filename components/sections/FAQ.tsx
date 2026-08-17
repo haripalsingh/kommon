@@ -77,7 +77,7 @@ export default function FAQ() {
                   key={faq.q}
                   className={`transition-all duration-300 ${
                     open
-                      ? "rounded-[2rem] bg-red-600 p-6 sm:p-8"
+                      ? "rounded-[2rem] bg-[#ff0000] p-6 sm:p-8"
                       : "rounded-full border-2 border-white px-6 py-5 sm:px-8 sm:py-6"
                   }`}
                 >
@@ -118,7 +118,7 @@ export default function FAQ() {
         </div>
 
         {/* Right: CTA card */}
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-red-600 p-8 sm:p-10">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-[#ff0000] p-8 sm:p-10">
           <span
             aria-hidden
             className="pointer-events-none absolute top-[17px]   right-[157px] select-none font-sans text-[9rem] font-normal leading-none text-white/40 sm:text-[11rem]"

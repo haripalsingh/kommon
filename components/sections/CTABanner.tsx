@@ -10,7 +10,7 @@ export default function CTABanner() {
        
         <Link
           href="/contact"
-          className="mt-4 inline-flex items-center gap-2 rounded-md bg-red-600 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-red-500"
+          className="mt-4 inline-flex items-center gap-2 rounded-md bg-[#ff0000] px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-red-500"
         >
           Book a Call
         

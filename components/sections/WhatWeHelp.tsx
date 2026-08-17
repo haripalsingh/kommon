@@ -203,7 +203,7 @@ export default function WhatWeHelp() {
 
               const variantClasses =
                 service.variant === "red"
-                  ? "border-red-400/30 bg-red-600"
+                  ? "border-red-400/30 bg-[#ff0000]"
                   : service.variant === "outline"
                     ? "border-red-500/70 bg-neutral-900"
                     : "border-white/10 bg-neutral-800/90";

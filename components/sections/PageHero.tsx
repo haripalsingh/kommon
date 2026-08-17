@@ -35,7 +35,7 @@ export default function PageHero({
         </h1>
 
         {description && (
-          <p className="mt-6  text-lg leading-relaxed  text-center text-neutral-400 block  capitalize">
+          <p className="mt-6  text-3xl leading-relaxed  text-center text-white block  capitalize">
             {description}
           </p>
         )}

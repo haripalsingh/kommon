@@ -8,21 +8,21 @@ const services = [
     title: "Brand Identity",
     description:
       "We build distinctive brand identities that bring your vision to life through strategy, design, and a consistent visual language.",
-    image: "/images/brand-identity.jpg",
+    image: "/projects/brand-identity.png",
   },
   {
     number: "02",
-    title: "Brand Identity",
+    title: "Packaging Design",
     description:
       "We create packaging that catches attention, communicates value, and turns every product into a memorable brand experience.",
-    image: "/images/packaging.jpg",
+    image: "/projects/packaging-design.png",
   },
   {
     number: "03",
-    title: "Brand Identity",
+    title: "Creative Partnership",
     description:
       "We design scroll-stopping digital content that keeps your brand consistent, engaging, and visually relevant across every platform.",
-    image: "/images/digital-content.jpg",
+    image: "/projects/creative-partnership.png",
   },
 ];
 

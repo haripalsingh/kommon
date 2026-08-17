@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black">
       {/* Scrolling ticker strip */}
-      <div className="overflow-hidden bg-red-600">
+      <div className="overflow-hidden bg-[#ff0000]">
         <div className="flex w-max animate-[marquee_144s_linear_infinite] items-center py-2 text-white">
           {[0, 1].map((dup) => (
             <div
@@ -85,7 +85,7 @@ export default function Header() {
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-[24px] font-normal  tracking-wide transition-colors ${
-                  isActive(link.href) ? "text-white" : "text-white hover:text-white"
+                  isActive(link.href) ? "text-white" : "text-white hover:text-[#ff0000]"
                 }`}
               >
                 {link.name}
@@ -97,7 +97,7 @@ export default function Header() {
           <div className="flex flex-1 items-center justify-end gap-3">
             <Link
               href="/contact"
-              className="hidden shrink-0 rounded-md bg-red-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-red-500 sm:inline-block"
+              className="hidden shrink-0 rounded-md bg-[#ff0000] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-red-500 sm:inline-block"
             >
               Book a Call
             </Link>
@@ -162,7 +162,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-red-600 px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white"
+              className="mt-2 rounded-full bg-[#ff0000] px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white"
             >
               Book a Call
             </Link>

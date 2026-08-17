@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import ServiceTimeline from "@/components/sections/ServiceTimeline";
-import LatestProjects from "@/components/sections/LatestProjects";
 import CTABanner from "@/components/sections/CTABanner";
+import Ourlatestwork from "@/components/sections/Ourlatestwork"
 
 const title = "Services";
 const description =
@@ -43,7 +43,7 @@ export default function ServicesPage() {
       {/* Full-width banner photo */}
       <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
         <Image
-          src="/projects/pro-img08.png"
+          src="/projects/services-header.png"
           alt="Kommon Canvas packaging design in the wild"
           fill
           sizes="100vw"
@@ -59,7 +59,7 @@ export default function ServicesPage() {
             Our Services
           </h2>
           <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full">
-            <span className="w-1/2 bg-red-600" />
+            <span className="w-1/2 bg-[#ff0000]" />
             <span className="w-1/2 bg-white" />
           </div>
           <p className="mt-8 text-xl leading-relaxed text-neutral-300 sm:text-2xl">
@@ -67,13 +67,9 @@ export default function ServicesPage() {
             apart
           </p>
         </div>
-
       </section>
-
       <ServiceTimeline />
-
-      <LatestProjects />
-
+      <Ourlatestwork/>
       <CTABanner />
     </div>
   );

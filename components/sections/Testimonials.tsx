@@ -51,7 +51,7 @@ export default function Testimonials() {
             <span className="text-white">Our Clients</span>
           </h2>
           <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full">
-            <span className="w-1/2 bg-red-600" />
+            <span className="w-1/2 bg-[#ff0000]" />
             <span className="w-1/2 bg-white" />
           </div>
         </div>

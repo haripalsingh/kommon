@@ -1,21 +1,36 @@
 export type Project = {
   slug: string;
   name: string;
+  tagline: string;
   category: string;
   image: string;
+  images: string[];
+  imagess: string;
   client: string;
   year: string;
   services: string[];
   summary: string;
   description: string;
 };
+ 
 
 export const projects: Project[] = [
   {
     slug: "tmug",
     name: "TMUG",
+    tagline: "Premium Tea Brand",
     category: "Brand Identity & Packaging",
     image: "/projects/tmug/tmug.png",
+    imagess: "/projects/our-work-1.png",
+    images: [
+      "/projects/tmug/tumg-1.png",
+      "/projects/tmug/tumg-2.png",
+      "/projects/tmug/tumg-3.png",
+      "/projects/tmug/tumg-4.png",
+      "/projects/tmug/tumg-5.png",
+      "/projects/tmug/tumg-6.png",
+      "/projects/tmug/tumg-7.png",
+    ],
     client: "TMUG",
     year: "2024",
     services: ["Brand Identity", "Packaging Design", "Social Media Design", "Print Design"],
@@ -27,8 +42,30 @@ export const projects: Project[] = [
   {
     slug: "sugar-whisk",
     name: "Sugar Whisk",
+    tagline: "Premium Cake Brand",
     category: "Brand Identity & Packaging",
     image: "/projects/sugar-wiskey/sugar-wiskey.png",
+    imagess: "/projects/our-work-2.png",
+    images: [
+      "/projects/sugar-wiskey/sugar-whisk-11.png",
+      "/projects/sugar-wiskey/sugar-whisk-12.png",
+      "/projects/sugar-wiskey/sugar-whisk-14.png",
+      "/projects/sugar-wiskey/sugar-whisk-15.png",
+      "/projects/sugar-wiskey/sugar-whisk-16.png",
+      "/projects/sugar-wiskey/sugar-whisk-17.png",
+      "/projects/sugar-wiskey/sugar-whisk-18.png",
+      "/projects/sugar-wiskey/sugar-whisk-19.png",
+      "/projects/sugar-wiskey/sugar-whisk-20.png",
+      "/projects/sugar-wiskey/sugar-whisk-21.png",
+      "/projects/sugar-wiskey/sugar-whisk-22.png",
+      "/projects/sugar-wiskey/sugar-whisk-23.png",
+      "/projects/sugar-wiskey/sugar-whisk-24.png",
+      "/projects/sugar-wiskey/sugar-whisk-25.png",
+      "/projects/sugar-wiskey/sugar-whisk-26.png",
+      "/projects/sugar-wiskey/sugar-whisk-27.png",
+      "/projects/sugar-wiskey/sugar-whisk-28.png",
+      "/projects/sugar-wiskey/sugar-whisk-29.png",
+    ],
     client: "Sugar Whisk",
     year: "2024",
     services: ["Brand Identity", "Packaging Design", "Illustration"],
@@ -39,8 +76,33 @@ export const projects: Project[] = [
   {
     slug: "gola-gully",
     name: "Gola Gully",
+    tagline: "Premium Beverage Brand",
     category: "Brand Identity",
     image: "/projects/branding-gola-gully/branding-gola-gully.png",
+        imagess: "/projects/our-work-3.png",
+    images: [
+      "/projects/branding-gola-gully/branding-gola-gully-01.png",
+      "/projects/branding-gola-gully/branding-gola-gully-02.png",
+      "/projects/branding-gola-gully/branding-gola-gully-03.png",
+      "/projects/branding-gola-gully/branding-gola-gully-04.png",
+      "/projects/branding-gola-gully/branding-gola-gully-05.png",
+      "/projects/branding-gola-gully/branding-gola-gully-06.png",
+      "/projects/branding-gola-gully/branding-gola-gully-07.png",
+      "/projects/branding-gola-gully/branding-gola-gully-08.png",
+      "/projects/branding-gola-gully/branding-gola-gully-09.png",
+      "/projects/branding-gola-gully/branding-gola-gully-10.png",
+      "/projects/branding-gola-gully/branding-gola-gully-11.png",
+      "/projects/branding-gola-gully/branding-gola-gully-12.png",
+      "/projects/branding-gola-gully/branding-gola-gully-13.png",
+      "/projects/branding-gola-gully/branding-gola-gully-14.png",
+      "/projects/branding-gola-gully/branding-gola-gully-15.png",
+      "/projects/branding-gola-gully/branding-gola-gully-16.png",
+      "/projects/branding-gola-gully/branding-gola-gully-17.png",
+      "/projects/branding-gola-gully/branding-gola-gully-18.png",
+      "/projects/branding-gola-gully/branding-gola-gully-19.png",
+      "/projects/branding-gola-gully/branding-gola-gully-21.png",
+      "/projects/branding-gola-gully/branding-gola-gully-22.png",
+    ],
     client: "Gola Gully",
     year: "2024",
     services: ["Brand Identity", "Packaging Design", "Illustration"],
@@ -51,8 +113,20 @@ export const projects: Project[] = [
   {
     slug: "golki",
     name: "Golki",
+    tagline: "Premium Soda Brand",
     category: "Brand Identity & Packaging",
     image: "/projects/golki-project-artboard/golki-project-artboard.png",
+        imagess: "/projects/our-work-4.png",
+    images: [
+      "/projects/golki-project-artboard/golki-project-artboard-11.png",
+      "/projects/golki-project-artboard/golki-project-artboard-12.png",
+      "/projects/golki-project-artboard/golki-project-artboard-13.png",
+      "/projects/golki-project-artboard/golki-project-artboard-14.png",
+      "/projects/golki-project-artboard/golki-project-artboard-15.png",
+      "/projects/golki-project-artboard/golki-project-artboard-16.png",
+      "/projects/golki-project-artboard/golki-project-artboard-17.png",
+      "/projects/golki-project-artboard/golki-project-artboard-18.png",
+    ],
     client: "Golki",
     year: "2023",
     services: ["Brand Identity", "Packaging Design", "Illustration"],
@@ -63,8 +137,22 @@ export const projects: Project[] = [
   {
     slug: "ram-fool",
     name: "Ram Fool",
+    tagline: "Brand Identity & Packaging",
     category: "Brand Identity",
     image: "/projects/ram-fool/ram-fool.png",
+        imagess: "/projects/our-work-5.png",
+    images: [
+      "/projects/ram-fool/ram-fool-01.png",
+      "/projects/ram-fool/ram-fool-02.png",
+      "/projects/ram-fool/ram-fool-03.png",
+      "/projects/ram-fool/ram-fool-04.png",
+      "/projects/ram-fool/ram-fool-05.png",
+      "/projects/ram-fool/ram-fool-06.png",
+      "/projects/ram-fool/ram-fool-07.png",
+      "/projects/ram-fool/ram-fool-08.png",
+      "/projects/ram-fool/ram-fool-09.png",
+      "/projects/ram-fool/ram-fool-11.png",
+    ],
     client: "Ram Fool",
     year: "2023",
     services: ["Brand Identity", "Logo Design", "Packaging Design"],
@@ -75,8 +163,21 @@ export const projects: Project[] = [
   {
     slug: "speed-nutrition",
     name: "Speed Nutrition",
+    tagline: "Premium Sports Nutrition Brand",
     category: "Packaging Design",
     image: "/projects/speed-nutrition/speed-nutrition.png",
+        imagess: "/projects/our-work-1.png",
+    images: [
+      "/projects/speed-nutrition/speed-nutrition-01.png",
+      "/projects/speed-nutrition/speed-nutrition-02.png",
+      "/projects/speed-nutrition/speed-nutrition-03.png",
+      "/projects/speed-nutrition/speed-nutrition-04.png",
+      "/projects/speed-nutrition/speed-nutrition-05.png",
+      "/projects/speed-nutrition/speed-nutrition-06.png",
+      "/projects/speed-nutrition/speed-nutrition-07.png",
+      "/projects/speed-nutrition/speed-nutrition-08.png",
+      "/projects/speed-nutrition/speed-nutrition-09.png",
+    ],
     client: "Speed Nutrition",
     year: "2023",
     services: ["Packaging Design", "Brand Identity", "Label Design"],
@@ -87,8 +188,23 @@ export const projects: Project[] = [
   {
     slug: "clump-maxx",
     name: "Clump Maxx",
+    tagline: "Premium Cat Litter Brand",
     category: "Brand Identity & Packaging",
     image: "/projects/clump-maxx/clump-maxx.png",
+        imagess: "/projects/our-work-2.png",
+    images: [
+      "/projects/clump-maxx/clump-maxx-01.png",
+      "/projects/clump-maxx/clump-maxx-02.png",
+      "/projects/clump-maxx/clump-maxx-03.png",
+       "/projects/clump-maxx/clump-maxx-04.png",
+        "/projects/clump-maxx/clump-maxx-05.png",
+         "/projects/clump-maxx/clump-maxx-06.png",
+          "/projects/clump-maxx/clump-maxx-07.png",
+           "/projects/clump-maxx/clump-maxx-08.png",
+            "/projects/clump-maxx/clump-maxx-09.png",
+             "/projects/clump-maxx/clump-maxx-10.png",
+               "/projects/clump-maxx/clump-maxx-11.png",
+    ],
     client: "Clump Maxx",
     year: "2024",
     services: ["Brand Identity", "Packaging Design", "Logo Design"],
@@ -99,8 +215,11 @@ export const projects: Project[] = [
   {
     slug: "re-peel",
     name: "Re'Peel",
+    tagline: "Brand Identity & Packaging",
     category: "Brand Identity & Packaging",
     image: "/projects/re-peel/re-peel.png",
+        imagess: "/projects/our-work-3.png",
+    images: ["/projects/re-peel/re-peel.png"],
     client: "Re'Peel",
     year: "2024",
     services: ["Brand Identity", "Packaging Design", "Illustration"],
@@ -108,6 +227,7 @@ export const projects: Project[] = [
     description:
       "We built a fresh, modern identity and packaging system for Re'Peel, balancing bold typography with a clean visual language to give the brand clear shelf presence and a distinct personality.",
   },
+    
 ];
 
 export function getProjectBySlug(slug: string) {

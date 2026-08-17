@@ -12,7 +12,7 @@ export default function WhoWeAre() {
     <>
       {/* Section 1 — brand statement, styled to match the reference: centered
           copy on a red panel with decorative doodles flanking the headline. */}
-      <section className="relative overflow-hidden bg-red-600 px-4 py-20 sm:px-8 sm:py-28">
+      <section className="relative overflow-hidden bg-[#ff0000] px-4 py-20 sm:px-8 sm:py-28">
         {/* Decorative growth-chart doodle */}
         
         {/* Decorative stairs doodle */}

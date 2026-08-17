@@ -15,11 +15,11 @@ export default function Hero() {
 
   return (
 
-    <section className="relative flex flex-col items-center overflow-hidden px-4 pb-20 pt-0 sm:px-8 header">
+    <section className="relative flex flex-col items-center overflow-hidden px-4 pb-0 md:pb-20 pt-0 sm:px-8 header">
       {/* Ambient glow behind the headline/photo */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[60vw] w-[60vw] max-h-[600px] max-w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/20 blur-[100px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[60vw] w-[60vw] max-h-[600px] max-w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff0000]/20 blur-[100px]"
         style={{ animation: "glow-pulse 6s ease-in-out infinite" }}
       />
 
@@ -70,9 +70,9 @@ export default function Hero() {
         </div>
 
         {/* Bottom row: description + CTA */}
-        <div className="relative z-20 mt-4 flex w-full flex-col items-start justify-between gap-8 sm:mt-2 sm:flex-row sm:items-end">
+        <div className="relative z-20 mt-4 flex w-full flex-col items-center justify-between gap-8 sm:mt-2 sm:flex-row sm:items-end">
           <p
-            className="max-w-2/4 text-[30px] leading-relaxed text-neutral-300 transition-all duration-700 ease-out "
+            className="max-w-full text-center text-[18px] md:text-[30px] leading-normal text-neutral-300 transition-all duration-700 ease-out sm:max-w-2/4 sm:text-left"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(24px)",
@@ -87,7 +87,7 @@ brands that want to stand out.
 
           <Link
             href="/work"
-            className="group inline-flex shrink-0 items-center gap-2 self-end rounded-md bg-white px-6 py-4 text-sm font-bold uppercase tracking-wide text-[#070505] transition-all duration-700 ease-out hover:scale-105 hover:bg-white"
+            className="group inline-flex shrink-0 items-center gap-2 self-center rounded-md bg-white px-6 py-4 text-sm font-bold uppercase tracking-wide text-[#070505] transition-all duration-700 ease-out hover:scale-105 hover:bg-white sm:self-end"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(24px)",
