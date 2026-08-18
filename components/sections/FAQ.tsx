@@ -60,7 +60,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-black py-20">
+    <section className="bg-black md:py-10 py-5">
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* Left: heading + accordion */}
         <div>
@@ -78,25 +78,25 @@ export default function FAQ() {
                   key={faq.q}
                   className={`transition-all duration-300 ${
                     open
-                      ? "rounded-[2rem] bg-[#ff0000] p-6 sm:p-8"
-                      : "rounded-full border-2 border-white px-6 py-5 sm:px-8 sm:py-6"
+                      ? "rounded-[1.5rem] bg-[#ff0000] p-5 sm:rounded-[2rem] sm:p-8"
+                      : "rounded-[1.5rem] border-2 border-white px-5 py-4 sm:rounded-full sm:px-8 sm:py-6"
                   }`}
                 >
                   <button
                     type="button"
                     onClick={() => setOpenIndex(open ? -1 : i)}
-                    className="flex w-full items-center justify-between gap-4 text-left"
+                    className="flex w-full items-start justify-between gap-4 text-left sm:items-center"
                     aria-expanded={open}
                   >
-                    <span className="text-lg font-bold text-white sm:text-xl">
+                    <span className="text-base font-bold leading-snug text-white sm:text-xl">
                       {faq.q}
                     </span>
                     {open ? (
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center text-2xl font-light leading-none text-white">
+                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-2xl font-light leading-none text-white sm:mt-0">
                         &minus;
                       </span>
                     ) : (
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center  border-white/40 text-lg font-light leading-none text-white">
+                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center  border-white/40 text-lg font-light leading-none text-white sm:mt-0">
                         +
                       </span>
                     )}
@@ -107,7 +107,7 @@ export default function FAQ() {
                     style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
                   >
                     <div className="overflow-hidden">
-                      <p className="mt-4 leading-relaxed text-white/90">
+                      <p className="mt-3 text-sm leading-relaxed text-white/90 sm:mt-4 sm:text-base">
                         {faq.a}
                       </p>
                     </div>
@@ -122,7 +122,7 @@ export default function FAQ() {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#ff0000] p-8 sm:p-10">
           <span
             aria-hidden
-            className="pointer-events-none absolute top-[17px]   right-[157px] select-none font-sans text-[9rem] font-normal leading-none text-white/40 sm:text-[11rem]"
+            className="pointer-events-none absolute top-[17px]   right-[118px] select-none font-sans text-[9rem] font-normal leading-none text-white/30 sm:text-[11rem]"
           >
             ?
           </span>

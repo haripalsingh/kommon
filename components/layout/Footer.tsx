@@ -13,7 +13,7 @@ const navLinks = [
 const socialLinks = [
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/kommoncanvas/",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -24,12 +24,22 @@ const socialLinks = [
   },
   {
     label: "Behance",
-    href: "https://behance.net",
-    icon: <span className="text-sm font-bold italic">B&#275;</span>,
+    href: "https://www.facebook.com/p/Kommon-Canvas-61593065804694/",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="currentColor"
+      >
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.003 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.956.931-1.956 1.887v2.264h3.328l-.532 3.495h-2.796V24C19.612 23.076 24 18.092 24 12.073z" />
+      </svg>
+    ),
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/kommoncanvas/",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <rect x="3" y="3" width="18" height="18" rx="3" />
@@ -62,8 +72,8 @@ const contactDetails = [
   },
   {
     label: "Email Us",
-    value: "hello@kommoncanvas.com",
-    href: "mailto:hello@kommoncanvas.com",
+    value: "kommoncanvas@gmail.com",
+    href: "mailto:kommoncanvas@gmail.com",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -96,7 +106,7 @@ export default function Footer() {
               alt="Kommon Canvas"
               width={2920}
               height={903}
-              className="h-auto w-[260px] max-w-full sm:w-[300px]"
+              className="h-auto w-[150px] max-w-full sm:w-[200px]"
             />
             <p className="mt-6 max-w-md leading-relaxed text-neutral-400">
               We help brands grow through branding, packaging design, social
@@ -142,8 +152,12 @@ export default function Footer() {
             lg:items-center would size each divider to its own column's
             content height instead, leaving the shorter columns' dividers
             shorter than "Follow Us". Each column then centers its own
-            content vertically within that stretched height. */}
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
+            content vertically within that stretched height.
+            min-w-0 on the columns lets flex children actually shrink instead
+            of forcing the row wider, and break-words on the value lets a
+            long email wrap onto a second line instead of overflowing into
+            the next column. */}
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[0.9fr_1fr_1.3fr_0.8fr] lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
           <div className="flex flex-col justify-center lg:pr-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-white">
               Follow Us
@@ -171,11 +185,11 @@ export default function Footer() {
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ff0000] text-white">
                   {detail.icon}
                 </span>
-                <span>
+                <span className="min-w-0">
                   <span className="block text-sm text-neutral-400">
                     {detail.label}
                   </span>
-                  <span className="block font-bold text-white">
+                  <span className="block truncate whitespace-nowrap font-bold text-white">
                     {detail.value}
                   </span>
                 </span>
@@ -185,14 +199,14 @@ export default function Footer() {
               <a
                 key={detail.label}
                 href={detail.href}
-                className={`flex items-center gap-3 lg:pl-6 ${isLast ? "" : "lg:pr-6"}`}
+                className={`flex min-w-0 items-center gap-3 lg:pl-6 ${isLast ? "" : "lg:pr-0"}`}
               >
                 {content}
               </a>
             ) : (
               <div
                 key={detail.label}
-                className={`flex items-center gap-3 lg:pl-6 ${isLast ? "" : "lg:pr-6"}`}
+                className={`flex min-w-0 items-center gap-3 lg:pl-6 ${isLast ? "" : "lg:pr-6"}`}
               >
                 {content}
               </div>

@@ -13,7 +13,7 @@ const featured = featuredSlugs
 
 export default function LatestProjects() {
   return (
-    <section className="bg-black py-16 sm:py-20">
+    <section className="bg-black py-5 sm:py-20">
       <Container>
         {/* Heading */}
         <div className="text-center">

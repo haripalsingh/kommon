@@ -1,16 +1,21 @@
 import type { NextConfig } from "next";
 
-const basePath = "/kommoncanvas";
-
 const nextConfig: NextConfig = {
   output: "export",
-  basePath,
-  assetPrefix: `${basePath}/`,
+  basePath: "/kommoncanvas",       // 👈 apna actual subfolder name daalo
+  assetPrefix: "/kommoncanvas",    // 👈 same subfolder name
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "aditechinfo.com",
+        pathname: "/kommoncanvas/**",
+      },
+    ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: true,
-  },
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

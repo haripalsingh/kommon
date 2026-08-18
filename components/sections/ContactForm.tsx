@@ -12,7 +12,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-[2rem] border border-white/10 bg-neutral-800/90 p-10 text-center">
+      <div className="rounded-[2rem] border border-white/10 bg-neutral-800/90 p-10 text-center flex items-center flex-col justify-center">
         <p className="text-2xl font-bold text-white">Thanks — got it!</p>
         <p className="mt-3 text-neutral-400">
           We&rsquo;ll get back to you within one business day.

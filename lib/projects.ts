@@ -135,8 +135,8 @@ export const projects: Project[] = [
       "Golki reimagines traditional refreshment with a bold, contemporary identity rooted in natural goodness. Inspired by the vibrancy of citrus fruits and Indian flavors, the brand blends authenticity with a vibrant, modern appeal across a full flavor range — from classic lemonade to kokum jeera. The result is a soda brand that feels fresh, flavorful, and visually irresistible on shelf.",
   },
   {
-    slug: "ram-fool",
-    name: "Ram Fool",
+    slug: "kam-fool",
+    name: "Kam Fool",
     tagline: "Brand Identity & Packaging",
     category: "Brand Identity",
     image: "https://aditechinfo.com/kommoncanvas/projects/ram-fool/ram-fool.png",

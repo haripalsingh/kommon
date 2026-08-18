@@ -33,10 +33,10 @@ body {
    all its children as one flattened group. To fade only the background
    image, the image lives on a ::before pseudo-element stacked behind the
    real content, and only that pseudo-element gets the opacity. */
-.header {
+/* .header {
   position: relative;
-}
-.header::before  {
+} */
+/* .header::before  {
   pointer-events: none;
   background-image: url('https://aditechinfo.com/kommoncanvas/header-bg.png');
   background-repeat: no-repeat;
@@ -49,7 +49,7 @@ body {
   height: 100%;
   content: '';
   opacity: 0.10;
-}
+} */
 
 
 
@@ -68,7 +68,7 @@ body {
 }
 
 .rightimage{
-    background-image: url('/who-are-right.png');
+    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-right.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

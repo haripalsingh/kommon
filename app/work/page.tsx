@@ -76,9 +76,9 @@ export default function WorkPage() {
 
               {/* Caption — always visible, shown after (below) the image */}
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-red-600">
+                {/* <p className="text-xs font-semibold uppercase tracking-wide text-red-600">
                   {project.category}
-                </p>
+                </p> */}
                 <p className="mt-1 text-xl font-bold text-white transition-colors group-hover:text-neutral-200 sm:text-2xl">
                   {project.name}
                 </p>

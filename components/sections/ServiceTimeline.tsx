@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const services = [
   {
@@ -29,65 +29,22 @@ const services = [
 
 export default function ServicesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-  const lockedRef = useRef(false);
 
+  // Autoplay: cycle through services automatically, looping back to the start.
+  // Restarts whenever activeIndex changes (autoplay tick or manual click),
+  // so a click resets the timer instead of jumping right away.
   useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      const section = sectionRef.current;
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % services.length);
+    }, 3000);
 
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-
-      // Only activate when section is visible
-      const sectionVisible =
-        rect.top <= window.innerHeight * 0.5 &&
-        rect.bottom >= window.innerHeight * 0.5;
-
-      if (!sectionVisible) return;
-
-      // Stop normal page scrolling
-      e.preventDefault();
-
-      if (lockedRef.current) return;
-
-      lockedRef.current = true;
-
-      if (e.deltaY > 0) {
-        // Scroll down
-        setActiveIndex((current) =>
-          Math.min(current + 1, services.length - 1)
-        );
-      } else {
-        // Scroll up
-        setActiveIndex((current) =>
-          Math.max(current - 1, 0)
-        );
-      }
-
-      // Prevent changing multiple slides from one wheel movement
-      setTimeout(() => {
-        lockedRef.current = false;
-      }, 650);
-    };
-
-    window.addEventListener("wheel", handleWheel, {
-      passive: false,
-    });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
 
   const activeService = services[activeIndex];
 
   return (
-    <section
-      ref={sectionRef}
-      className="flex min-h-screen items-center bg-[#050505] text-white"
-    >
+    <section className="flex min-h-screen items-center bg-[#050505] text-white">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
 
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
@@ -95,14 +52,17 @@ export default function ServicesSection() {
           {/* LEFT */}
           <div className="relative">
 
-            {/* Progress bar */}
-            <div className="absolute left-0 top-0 h-full w-3 rounded-full bg-[#d9d9d9]">
-              <div
-                className="w-full rounded-full bg-[#ff0808] transition-all duration-700 ease-out"
-                style={{
-                  height: `${((activeIndex + 1) / services.length) * 100}%`,
-                }}
-              />
+            {/* Single continuous bar, divided into equal segments.
+                Default gray; only the active service's segment turns red. */}
+            <div className="absolute left-0 top-0 flex h-full w-3 flex-col overflow-hidden rounded-full bg-[#d9d9d9]">
+              {services.map((service, index) => (
+                <div
+                  key={service.number}
+                  className={`flex-1 transition-colors duration-500 ${
+                    activeIndex === index ? "bg-[#ff0808]" : "bg-transparent"
+                  }`}
+                />
+              ))}
             </div>
 
             <div className="space-y-8 pl-12">
@@ -110,7 +70,8 @@ export default function ServicesSection() {
               {services.map((service, index) => (
                 <div
                   key={service.number}
-                  className="min-h-[150px] flex items-center"
+                  onClick={() => setActiveIndex(index)}
+                  className="flex min-h-[150px] cursor-pointer items-center"
                 >
                   <div>
 
@@ -134,15 +95,11 @@ export default function ServicesSection() {
                       {service.title}
                     </h3>
 
-                    <p
-                      className={`mt-2 max-w-[450px] text-base leading-6 transition-all duration-500 ${
-                        activeIndex === index
-                          ? "text-white"
-                          : "text-[#999]"
-                      }`}
-                    >
-                      {service.description}
-                    </p>
+                    {activeIndex === index && (
+                      <p className="mt-2 max-w-[450px] text-base leading-6 text-white transition-all duration-500 animate-[fadeIn_.5s_ease]">
+                        {service.description}
+                      </p>
+                    )}
 
                   </div>
                 </div>
