@@ -101,7 +101,7 @@ const contactDetails = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black pb-10 pt-16">
+    <footer className="bg-black pb-10 md:pt-16 pt-3">
       <Container>
         {/* Top: logo + blurb / newsletter card */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-14">
@@ -162,7 +162,7 @@ export default function Footer() {
             of forcing the row wider, and break-words on the value lets a
             long email wrap onto a second line instead of overflowing into
             the next column. */}
-        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[0.9fr_1fr_1.3fr_0.8fr] lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[0.9fr_1fr_1.3fr_0.8fr] lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
           <div className="flex flex-col justify-center lg:pr-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-white">
               Follow Us
@@ -223,7 +223,7 @@ export default function Footer() {
 
         {/* Bottom: nav + copyright */}
         <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <nav className="flex flex-wrap items-center gap-x-8 gap-y-2">
+          <nav className="flex flex-wrap items-center md:gap-x-8 gap-x-5 gap-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

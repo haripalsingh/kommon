@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "@/components/layout/Container";
 
 const navLinks = [
@@ -22,26 +22,33 @@ const tickerItems = [
   "Print Design",
 ];
 
-// The marquee works by rendering two identical "groups" side by side and
-// animating translateX(0 -> -50%), so the second group seamlessly takes
-// the first group's place when the loop restarts. That only stays
-// seamless if each group is wider than the viewport — otherwise, on wide
-// screens, the animation runs out of content near the end of the cycle
-// and a blank gap shows before it loops. Repeating the item list several
-// times inside a single group keeps that group comfortably wider than
-// any real screen, so the loop never runs dry.
 const TICKER_REPEATS = 6;
 const tickerGroup = Array.from({ length: TICKER_REPEATS }, () => tickerItems).flat();
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  // Controls whether the mobile panel is in the DOM at all — kept mounted
+  // slightly longer than `open` so the closing transition can play out
+  // instead of the panel just vanishing.
+  const [rendered, setRendered] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
+  useEffect(() => {
+    if (open) {
+      setRendered(true);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      const t = setTimeout(() => setRendered(false), 350);
+      return () => clearTimeout(t);
+    }
+  }, [open]);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-black">
+    <header className="sticky top-0 z-50 w-full bg-black ">
       {/* Scrolling ticker strip */}
       <div className="overflow-hidden bg-[#ff0000]">
         <div className="flex w-max animate-[marquee_144s_linear_infinite] items-center py-2 text-white">
@@ -68,7 +75,7 @@ export default function Header() {
       <div className="py-5">
         <Container className="flex items-center justify-between gap-4">
           {/* Logo — pinned left */}
-          <Link href="/" className="flex flex-1 items-center">
+          <Link href="/" className="relative z-[60] flex flex-1 items-center">
             <Image
               src="https://aditechinfo.com/kommoncanvas/logo.svg"
               alt="Kommon Canvas"
@@ -108,66 +115,97 @@ export default function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
               aria-expanded={open}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white lg:hidden"
+              className="relative z-[60] flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-colors lg:hidden"
             >
-              {open ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M4 6h16" />
-                  <path d="M4 12h16" />
-                  <path d="M4 18h16" />
-                </svg>
-              )}
+              {/* Animated hamburger -> X, built from two bars that rotate/merge instead of icon-swap */}
+              <span className="relative flex h-4 w-5 flex-col justify-between">
+                <span
+                  className="block h-[2px] w-full origin-center rounded-full bg-white transition-all duration-300 ease-out"
+                  style={{
+                    transform: open ? "translateY(7px) rotate(45deg)" : "none",
+                  }}
+                />
+                <span
+                  className="block h-[2px] w-full rounded-full bg-white transition-all duration-300 ease-out"
+                  style={{
+                    opacity: open ? 0 : 1,
+                    transform: open ? "scaleX(0)" : "scaleX(1)",
+                  }}
+                />
+                <span
+                  className="block h-[2px] w-full origin-center rounded-full bg-white transition-all duration-300 ease-out"
+                  style={{
+                    transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
+                  }}
+                />
+              </span>
             </button>
           </div>
         </Container>
 
-        {/* Mobile nav panel */}
-        {open && (
-          <Container className="mt-2 flex flex-col gap-1 rounded-3xl border border-white/10 bg-neutral-900/95 p-4 backdrop-blur lg:hidden">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                aria-current={isActive(link.href) ? "page" : undefined}
-                className={`rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wide ${
-                  isActive(link.href) ? "bg-white/10 text-white" : "text-neutral-400 hover:text-white"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
+        {/* Mobile nav overlay + panel */}
+        {rendered && (
+          <>
+            {/* Backdrop */}
+            <div
+              aria-hidden
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-[#ff0000] px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white"
+              className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ease-out lg:hidden"
+              style={{ opacity: open ? 1 : 0 }}
+            />
+
+            {/* Panel */}
+            <div
+              className="fixed inset-x-0 top-0 z-50 origin-top border-b border-white/10 bg-neutral-950/98 pb-8 pt-28 shadow-2xl backdrop-blur-xl transition-all duration-350 ease-out lg:hidden"
+              style={{
+                opacity: open ? 1 : 0,
+                transform: open ? "translateY(0) scaleY(1)" : "translateY(-8px) scaleY(0.98)",
+              }}
             >
-              Book a Call
-            </Link>
-          </Container>
+              <Container className="flex flex-col gap-1">
+                {navLinks.map((link, i) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    className={`group flex items-center justify-between border-b border-white/5 py-4 text-2xl font-bold uppercase tracking-wide transition-all duration-300 ease-out ${
+                      isActive(link.href) ? "text-[#ff0000]" : "text-white"
+                    }`}
+                    style={{
+                      opacity: open ? 1 : 0,
+                      transform: open ? "translateX(0)" : "translateX(-16px)",
+                      transitionDelay: open ? `${100 + i * 60}ms` : "0ms",
+                    }}
+                  >
+                    <span>{link.name}</span>
+                    <span
+                      className={`text-lg transition-all duration-300 ${
+                        isActive(link.href)
+                          ? "translate-x-0 text-[#ff0000] opacity-100"
+                          : "-translate-x-1 text-white/40 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                      }`}
+                    >
+                      &rarr;
+                    </span>
+                  </Link>
+                ))}
+
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="mt-6 rounded-full bg-[#ff0000] px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 ease-out hover:bg-red-500"
+                  style={{
+                    opacity: open ? 1 : 0,
+                    transform: open ? "translateY(0)" : "translateY(12px)",
+                    transitionDelay: open ? `${100 + navLinks.length * 60}ms` : "0ms",
+                  }}
+                >
+                  Book a Call
+                </Link>
+              </Container>
+            </div>
+          </>
         )}
       </div>
     </header>

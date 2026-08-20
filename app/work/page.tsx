@@ -40,7 +40,7 @@ export default function WorkPage() {
         }
       />
 
-      <section className="bg-black pb-24">
+      <section className="bg-black md:pb-24 pb-5">
         <Container className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14">
           {projects.map((project) => (
             <Link

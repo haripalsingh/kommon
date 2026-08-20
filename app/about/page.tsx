@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
 
       {/* Concept. Clarity. Character. Craft. Creation. */}
-      <section className="bg-black pb-24 pt-24">
+      <section className="bg-black md:pb-24 pb-5 md:pt-24 pt-10">
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
 
@@ -131,8 +131,8 @@ export default function AboutPage() {
       </section>
 
       {/* What We Don't Do / What We Do */}
-      <section className="mb-20">
-        <Container className="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-white/20">
+      <section className="md:mb-20 mb-0">
+        <Container className="grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-0 ">
           <div className="sm:pr-12 lg:pr-16  py-8 sm:py-8">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Don&rsquo;t Do
@@ -151,7 +151,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="sm:pl-12 lg:pl-16 bg-[#ff0000] rounded-l-2xl  py-8 sm:py-8">
+          <div className="sm:pl-12 lg:pl-16 bg-[#ff0000] rounded-l-2xl  py-8 sm:py-8 px-3">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Do
             </h2>

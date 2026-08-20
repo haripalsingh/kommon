@@ -12,7 +12,7 @@ const featured = projects;
 
 const Ourlatestwork = () => {
   return (
-    <section className="overflow-hidden bg-black">
+    <section className="overflow-hidden bg-black md:pt-0 pt-10">
       <Container>
         {/* Heading row */}
         <div className="flex flex-wrap items-center justify-between gap-4">
