@@ -131,9 +131,9 @@ export default function AboutPage() {
       </section>
 
       {/* What We Don't Do / What We Do */}
-      <section className="bg-[#ff0000] py-20 sm:py-28">
+      <section className="mb-20">
         <Container className="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-white/20">
-          <div className="sm:pr-12 lg:pr-16">
+          <div className="sm:pr-12 lg:pr-16  py-8 sm:py-8">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Don&rsquo;t Do
             </h2>
@@ -151,7 +151,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="sm:pl-12 lg:pl-16">
+          <div className="sm:pl-12 lg:pl-16 bg-[#ff0000] rounded-l-2xl  py-8 sm:py-8">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Do
             </h2>

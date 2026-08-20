@@ -68,8 +68,8 @@ export default function WorkPage() {
                     strokeLinejoin="round"
                     className="h-4 w-4"
                   >
-                    <path d="M7 17 17 7" />
-                    <path d="M7 7h10v10" />
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </span>
               </div>

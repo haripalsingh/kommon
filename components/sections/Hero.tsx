@@ -81,7 +81,7 @@ export default function Hero() {
 
         {/* Founder photo, overlapping the headline */}
         <div
-          className="pointer-events-none relative z-10 -mt-[15vw] w-[48vw] max-w-[280px] transition-all duration-700 ease-out sm:-mt-[10vw] sm:w-[32vw] sm:max-w-[340px] md:-mt-[9vw] md:w-[26vw] md:max-w-[420px]"
+          className="pointer-events-none relative z-10 -mt-[15vw] w-[48vw] max-w-[280px] transition-all duration-700 ease-out sm:-mt-[10vw] sm:w-[32vw] sm:max-w-[340px] md:-mt-[6vw] md:w-[26vw] md:max-w-[420px]"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "scale(1)" : "scale(0.85)",
