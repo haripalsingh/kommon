@@ -89,7 +89,7 @@ const restRotation = [-4, 5, -5, 6];
 const entryRotation = [0, -16, 16, -16];
 
 // Scroll distance (px) devoted to the 3 card transitions while pinned.
-const SCROLL_BUFFER_PX = 900;
+const SCROLL_BUFFER_PX = 2200;
 
 // Below this breakpoint (tablet/mobile) the pinned scroll-jack animation is
 // disabled entirely and cards render as a normal static stack instead.
@@ -194,7 +194,7 @@ export default function WhatWeHelp() {
           isDesktop ? "sticky top-20" : ""
         }`}
       >
-        <Container className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-12">
+        <Container className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left column */}
           <div>
             <h2 className="text-5xl  leading-[0.95] tracking-tight sm:text-6xl text-center md:text-left">
@@ -209,14 +209,14 @@ export default function WhatWeHelp() {
               {tools.map((tool) => (
                 <div
                   key={tool.label}
-                  className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-white/60 bg-white/5"
+                  className="flex md:h-16 h-10 md:w-16 w-10 shrink-0 items-center justify-center rounded-2xl border-2 border-white/60 bg-white/5"
                 >
                   <Image
                     src={tool.src}
                     alt={tool.label}
                     width={40}
                     height={40}
-                    className="h-8 w-8 object-contain"
+                    className="md:h-8 h-5 w-5 md:w-8 object-contain"
                   />
                 </div>
               ))}

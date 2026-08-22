@@ -77,8 +77,8 @@ export default function ContactPage() {
         description="Let's Build Something Meaningful"
       />
 
-      <section className="bg-black pb-24">
-        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+      <section className="bg-black md:pb-10 pb-5 pb-5">
+        <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           {/* Intro + highlights */}
           <div className="flex flex-col">
             <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">

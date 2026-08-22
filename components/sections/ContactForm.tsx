@@ -24,10 +24,10 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[2rem]  p-8 sm:p-10"
+      className="rounded-[2rem]  p-0 sm:p-10"
     >
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="mb-8">
+        <div className="md:mb-8 mb-3">
           <label htmlFor="fullName" className="text-sm font-semibold text-neutral-300">
             Full Name *
           </label>
@@ -40,7 +40,7 @@ export default function ContactForm() {
             className="mt-2 w-full rounded-md border border-white/15 bg-[#292929] px-4 py-3 text-white placeholder-neutral-500 outline-none transition-colors focus:border-red-500"
           />
         </div>
-        <div className="mb-8">
+        <div className="md:mb-8 mb-3">
           <label htmlFor="email" className="text-sm font-semibold text-neutral-300">
             Email Address *
           </label>
@@ -56,7 +56,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div className="mb-8">
+      <div className="md:mb-8 mb-3">
           <label htmlFor="phone" className="text-sm font-semibold text-neutral-300">
             Phone Number *
           </label>
@@ -69,7 +69,7 @@ export default function ContactForm() {
             className="mt-2 w-full rounded-md border border-white/15 bg-[#292929] px-4 py-3 text-white placeholder-neutral-500 outline-none transition-colors focus:border-red-500"
           />
         </div>
-        <div className="mb-8">
+        <div className="md:mb-8 mb-3">
           <label htmlFor="subject" className="text-sm font-semibold text-neutral-300">
             Subject *
           </label>
@@ -92,7 +92,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
-          rows={5}
+          rows={9}
           placeholder="How we can help"
           className="mt-2 w-full resize-none rounded-md border border-white/15 bg-[#292929] px-4 py-3 text-white placeholder-neutral-500 outline-none transition-colors focus:border-red-500"
         />

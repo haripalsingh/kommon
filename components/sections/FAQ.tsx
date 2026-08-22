@@ -122,7 +122,7 @@ export default function FAQ() {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#ff0000] p-8 sm:p-10">
           <span
             aria-hidden
-            className="pointer-events-none absolute top-[17px]   right-[118px] select-none font-sans text-[9rem] font-normal leading-none text-white/30 sm:text-[11rem]"
+            className="pointer-events-none absolute top-[17px] right-[28px] md:right-[118px] select-none font-sans text-[9rem] font-normal leading-none text-white/30 sm:text-[11rem]"
           >
             ?
           </span>

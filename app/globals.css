@@ -136,3 +136,10 @@ body {
     transform: scale(1.08);
   }
 }
+
+
+@media (max-width:767px) {
+  .leftimage, .rightimage{
+    display: none;
+  }
+}

@@ -18,7 +18,7 @@ export default function PageHero({
   title,
 }: PageHeroProps) {
   return (
-    <section className="bg-black pb-16 pt-8 sm:pt-10">
+    <section className="bg-black pb-10 pt-8 sm:pt-10">
       <Container className="text-center uppercase">
         {eyebrow && (
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
