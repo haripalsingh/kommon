@@ -74,6 +74,7 @@ export default function Header() {
               alt="Kommon Canvas"
               width={180}
               height={39}
+               className="w-[100px] h-auto sm:w-[180px]"
               priority
             />
           </Link>

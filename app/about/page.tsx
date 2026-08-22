@@ -114,12 +114,12 @@ export default function AboutPage() {
           <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
 
           <div className="lg:col-span-8">
-            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl text-right">
+            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl text-center md:text-right">
               Concept. Clarity.
               <br />
               Character. Craft. Creation.
             </h2>
-            <p className="mt-6 leading-relaxed text-neutral-300  text-right">
+            <p className="mt-6 leading-relaxed text-neutral-300  text-center md:text-right">
               At Kommon Canvas, we turn ideas into distinctive brand
               experiences through strategy, creativity, and thoughtful
               design. From concept to execution, every detail is crafted

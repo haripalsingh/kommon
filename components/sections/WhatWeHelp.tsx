@@ -197,13 +197,15 @@ export default function WhatWeHelp() {
         <Container className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-12">
           {/* Left column */}
           <div>
-            <h2 className="text-5xl  leading-[0.95] tracking-tight sm:text-6xl">
+            <h2 className="text-5xl  leading-[0.95] tracking-tight sm:text-6xl text-center md:text-left">
               <span className="block text-white">What We Help</span>
               <span className="block font-extrabold text-red-600">You Shape&hellip;</span>
             </h2>
 
-            <p className="mt-12 text-neutral-400">Tools that we use</p>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <p className="mt-12 text-neutral-400 text-center md:text-left">
+              Tools that we use
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-3 md:justify-start text-center md:text-left">
               {tools.map((tool) => (
                 <div
                   key={tool.label}
@@ -263,7 +265,7 @@ export default function WhatWeHelp() {
                       {service.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white"
+                          className="rounded-full border border-white/40 px-4 py-2 text-xs  md:text-sm font-semibold text-white"
                         >
                           {tag}
                         </span>
@@ -296,7 +298,7 @@ export default function WhatWeHelp() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white"
+                        className="rounded-full border border-white/40 px-2 py-2 text-xs  md:text-sm  font-semibold text-white"
                       >
                         {tag}
                       </span>
