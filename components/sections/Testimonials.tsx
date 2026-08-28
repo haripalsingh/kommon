@@ -3,40 +3,35 @@ import Container from "@/components/layout/Container";
 const testimonials = [
   {
     quote:
-      "Exceptional creativity and flawless execution! They delivered a complete packaging design system across our entire product range, ahead of schedule.",
-    name: "Priya Verma",
-    role: "Product Lead, Innovate Labs",
+      "Working with the design team was a great experience. They understood our brand vision and translated it into packaging that feels modern, premium, and aligned with our identity. The final designs gave our products a much more professional and appealing look",
+    name: "Sanjeev Nayya",
+    role: "Founder & CEO Of incenzaofficial",
   },
   {
     quote:
-      "Highly professional service! The new packaging design and brand positioning completely refreshed how customers see us on the shelf.",
-    name: "Karan Patel",
-    role: "CEO, Nexa Packaging",
+      "Working with the team was a great experience. They brought fresh creative thinking to our packaging and understood our brand perfectly. The final designs were thoughtful, impactful, and truly elevated the way Drinkit India presents itself",
+    name: "Kaushal Kishore Gautam",
+    role: "Founder and CEO DrinkitIndia",
   },
   {
     quote:
-      "The team understood our product from day one and designed packaging that truly stands out on the shelf. Every detail, from the die-line to the finish, was thoughtfully crafted.",
-    name: "Arjun Mehta",
-    role: "Founder, Pixel Foods",
+      "We really loved how the packaging came together. The design feels creative, well thought-out, and professional. The team understood our requirements and delivered something that was beyond what we initially imagined",
+    name: "Sanjeev Nayya",
+    role: "Founder & CEO Of Beancult",
   },
   {
     quote:
-      "Working with Kommon Canvas was effortless from the first call to the final print run. Our packaging finally looks as good as our product tastes.",
-    name: "Rhea Kapoor",
-    role: "Co-founder, Wild Orchard",
+      "Thank you for the amazing packaging design. We truly appreciate the creativity, attention to detail, and effort put into understanding our brand. The final result looks professional, impactful, and beyond our expectations",
+    name: "Aman Puri",
+    role: "Founder & CEO speednutrition",
   },
   {
     quote:
-      "They took a vague brief and turned it into a brand identity that actually feels like us. Communication and turnaround were spot on throughout.",
-    name: "Aditya Rao",
-    role: "Marketing Head, Vamshi Farms",
+      "Thank you so much for bringing our vision to life. The packaging design turned out even better than we imagined. We were impressed by the attention to detail, premium aesthetic, and professionalism throughout the process. The final design perfectly captures the elegance and sophistication we wanted for our brand",
+    name: "Amar Roy",
+    role: "Founder and CEO DEVILLINE",
   },
-  {
-    quote:
-      "From concept to shelf, every round of feedback was handled quickly and thoughtfully. Easily the smoothest packaging project we've run.",
-    name: "Simran Kaur",
-    role: "Brand Manager, Swap Beverages",
-  },
+  
 ];
 
 // Duplicate the list so the marquee loop (translateX 0 -> -50%) is seamless.
