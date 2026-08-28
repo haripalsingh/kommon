@@ -12,11 +12,11 @@ const featured = projects;
 
 const Ourlatestwork = () => {
   return (
-    <section className="overflow-hidden bg-black md:pt-0 pt-10">
+    <section className="overflow-hidden bg-black md:pt-24 pt-10 pb-10">
       <Container>
         {/* Heading row */}
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <h2 className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-6xl">
+          <h2 className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl">
             Our Work
           </h2>
           <Link

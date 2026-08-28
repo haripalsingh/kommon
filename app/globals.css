@@ -28,6 +28,11 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+.commoncontainer{
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 /* Plain `opacity` on .header would fade the whole section — headline,
    photo, text, everything — because opacity applies to the element and
    all its children as one flattened group. To fade only the background
@@ -141,5 +146,8 @@ body {
 @media (max-width:767px) {
   .leftimage, .rightimage{
     display: none;
+  }
+  .commoncontainer{
+    width: 100%;
   }
 }

@@ -77,7 +77,7 @@ export default function ContactPage() {
         description="Let's Build Something Meaningful"
       />
 
-      <section className="bg-black md:pb-10 pb-5 pb-5">
+      <section className="bg-black ">
         <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           {/* Intro + highlights */}
           <div className="flex flex-col">
@@ -87,7 +87,7 @@ export default function ContactPage() {
               <span className="text-red-600">Next Project!</span>
             </h2>
 
-            <p className="mt-6  text-[24px] leading-relaxed text-white">
+            <p className="mt-6  text-[22px] leading-relaxed text-white">
               Have a project in mind or just want to explore possibilities?
               We&rsquo;d love to hear from you. Share your ideas with us and
               let&rsquo;s create something impactful together.

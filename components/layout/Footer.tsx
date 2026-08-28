@@ -41,10 +41,21 @@ const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/kommoncanvas/",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <rect x="3" y="3" width="18" height="18" rx="3" />
-        <path d="M7 10v6M7 7.5v.01M11 16v-3.5a2 2 0 0 1 4 0V16M11 12.5V16" />
-      </svg>
+        <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-5 w-5"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M8 11v5" />
+    <path d="M8 8v.01" />
+    <path d="M12 16v-5" />
+    <path d="M12 13a2 2 0 0 1 4 0v3" />
+  </svg>
     ),
   },
   {
@@ -88,7 +99,7 @@ const contactDetails = [
   },
   {
     label: "Visit Us",
-    value: "Ghaziabad, India",
+    value: "Noida, India",
     href: undefined,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">

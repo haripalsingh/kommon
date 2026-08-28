@@ -18,7 +18,7 @@ type ContainerProps = ComponentPropsWithoutRef<"div">;
 export default function Container({ className = "", ...props }: ContainerProps) {
   return (
     <div
-      className={["mx-auto w-full max-w-7xl px-4 sm:px-8", className]
+      className={["mx-auto w-full commoncontainer px-4 sm:px-8", className]
         .filter(Boolean)
         .join(" ")}
       {...props}

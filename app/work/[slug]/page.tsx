@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           All Projects
         </Link>
 
-        <h1 className="text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
+        <h1 className="text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-6xl">
           {project.name}
         </h1>
         <p className="mt-4 text-lg text-neutral-300 sm:text-xl">{project.tagline}</p>

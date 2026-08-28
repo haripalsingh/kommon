@@ -26,7 +26,7 @@ export default function PageHero({
           </p>
         )}
 
-        <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
+        <h1 className="mt-4 text-4xl font-extrabold leading-[1.05]  sm:text-5xl">
           {title ?? (
             <>
               <span className="text-white">{titleWhite} </span>
@@ -36,7 +36,7 @@ export default function PageHero({
         </h1>
 
         {description && (
-          <p className="mt-6  text-3xl leading-relaxed  text-center text-white block  capitalize">
+          <p className="mt-4  text-2xl leading-relaxed  text-center text-white block  capitalize">
             {description}
           </p>
         )}

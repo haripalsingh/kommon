@@ -64,7 +64,7 @@ export default function FAQ() {
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* Left: heading + accordion */}
         <div>
-          <h2 className="text-5xl font-extrabold text-white sm:text-6xl">FAQ</h2>
+          <h2 className="text-5xl font-extrabold text-white sm:text-5xl">FAQ</h2>
           <p className="mt-4 max-w-xl text-neutral-400">
             Everything you need to know before starting your branding
             journey.

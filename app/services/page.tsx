@@ -35,7 +35,7 @@ export default function ServicesPage() {
             <span className="text-red-600">Great Design</span>
             <span className="text-white"> Into</span>
             <br />
-            <span className="text-white">Unforgettable Brand Experiences.</span>
+            <span className="text-white">Unforgettable Brand Experiences</span>
           </>
         }
       />
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       {/* Services intro */}
       <section className="bg-black px-4 pb-5 pt-10 sm:px-8">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <h2 className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-6xl">
+          <h2 className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl">
             Our Services
           </h2>
           <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full">

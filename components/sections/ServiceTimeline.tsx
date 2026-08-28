@@ -36,7 +36,7 @@ export default function ServicesSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % services.length);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [activeIndex]);
@@ -44,7 +44,7 @@ export default function ServicesSection() {
   const activeService = services[activeIndex];
 
   return (
-    <section className="flex min-h-screen items-center bg-[#050505] text-white">
+    <section className="flex items-center bg-[#050505] text-white mt-10 md:mt-16">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
 
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
@@ -76,7 +76,7 @@ export default function ServicesSection() {
                   <div>
 
                     <div
-                      className={`text-5xl font-bold leading-none transition-all duration-500 ${
+                      className={`text-4xl font-bold leading-none transition-all duration-500 ${
                         activeIndex === index
                           ? "text-[#ff0808]"
                           : "text-[#d9d9d9]"

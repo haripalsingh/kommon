@@ -91,7 +91,7 @@ export default function AboutPage() {
             <span className="text-red-600">Identity</span>
             <span className="text-white">, We Make</span>
             <br />
-            <span className="text-white">Brands Worth Remembering.</span>
+            <span className="text-white">Brands Worth Remembering</span>
           </>
         }
       />
@@ -108,17 +108,12 @@ export default function AboutPage() {
               />
             </div>
 
-      {/* Concept. Clarity. Character. Craft. Creation. */}
-<<<<<<< HEAD
-      <section className="bg-black md:pb-24 pb-5 md:pt-24 pt-10">
-=======
       <section className="bg-black pb-14 pt-14 md:pb-24 md:pt-24">
->>>>>>> 4a9754f06908f2ccecb434d32936f4e2fd1f1938
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
 
           <div className="lg:col-span-8">
-            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl text-center md:text-right">
+            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-4xl text-center md:text-right">
               Concept. Clarity.
               <br />
               Character. Craft. Creation.

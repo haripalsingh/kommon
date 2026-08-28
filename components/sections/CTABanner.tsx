@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function CTABanner() {
   return (
-    <section className="bg-black px-4 py-10 sm:px-8">
+    <section className="bg-black">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
-        <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-6xl">
+        <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
           <span className="text-white">Have a project for us?</span>{" "}
         </h2>
        

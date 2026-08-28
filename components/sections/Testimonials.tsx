@@ -48,9 +48,9 @@ export default function Testimonials() {
       <Container>
         {/* Heading */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-4xl font-extrabold uppercase tracking-tight sm:text-6xl">
-            <span className="text-red-600">Voices of</span>{" "}
-            <span className="text-white">Our Clients</span>
+          <h2 className="text-4xl font-extrabold uppercase tracking-tight sm:text-5xl">
+            {/* <span className="text-red-600"></span>{" "} */}
+            <span className="text-white">Voices of Our Clients</span>
           </h2>
           <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full">
             <span className="w-1/2 bg-[#ff0000]" />

@@ -17,7 +17,7 @@ export default function LatestProjects() {
       <Container>
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-4xl font-bold uppercase tracking-tight text-white sm:text-6xl">
+          <h2 className="text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl">
            Latest Projects
           </h2>
            <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full mx-auto">

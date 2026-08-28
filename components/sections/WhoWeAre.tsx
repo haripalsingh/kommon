@@ -19,7 +19,7 @@ export default function WhoWeAre() {
         <div className="leftimage"></div>
          
         <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-          <h2 className="text-5xl font-bold  uppercase tracking-tight text-white sm:text-7xl">
+          <h2 className="text-3xl font-bold  uppercase tracking-tight text-white sm:text-6xl">
             Who We Are
           </h2>
           <p className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
