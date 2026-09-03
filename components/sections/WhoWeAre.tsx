@@ -22,7 +22,7 @@ export default function WhoWeAre() {
           <h2 className="text-3xl font-bold  uppercase tracking-tight text-white sm:text-5xl">
             Who We Are
           </h2>
-          <p className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
+          <p className="mt-4 text-[2xl] font-medium text-white sm:text-[26px]">
             We Build Brands.
           </p>
           <div className="mt-6 flex h-1 w-24 overflow-hidden rounded-full">

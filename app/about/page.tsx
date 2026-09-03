@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     title: `${title} | Kommon Canvas`,
     description,
     url: "/about",
-    images: [{ url: "/our-story.png", width: 1200, height: 940, alt: "Khushi Tyagi, Founder of Kommon Canvas" }],
+    images: [{ url: "/our-story.webp", width: 1200, height: 940, alt: "Khushi Tyagi, Founder of Kommon Canvas" }],
   },
   twitter: {
     title: `${title} | Kommon Canvas`,
     description,
-    images: ["/our-story.png"],
+    images: ["/our-story.webp"],
   },
 };
 
@@ -96,17 +96,17 @@ export default function AboutPage() {
         }
       />
 
-            {/* Full-width banner photo */}
-            <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
-              <Image
-                src="https://aditechinfo.com/kommoncanvas/projects/about-us.png"
-                alt="Kommon Canvas packaging design in the wild"
-                fill
-                sizes="100vw"
-                priority
-                className="object-cover"
-              />
-            </div>
+      {/* Full-width banner photo */}
+      <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
+        <Image
+          src="https://aditechinfo.com/kommoncanvas/projects/about-us.webp"
+          alt="Kommon Canvas packaging design in the wild"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
+        />
+      </div>
 
       <section className="bg-black pb-14 pt-14 md:pb-24 md:pt-24">
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
@@ -118,7 +118,7 @@ export default function AboutPage() {
               <br />
               Character. Craft. Creation.
             </h2>
-            <p className="mt-6 leading-relaxed text-neutral-300  text-center md:text-right">
+            <p className="mt-6 leading-relaxed text-neutral-300 text-center md:text-right">
               At Kommon Canvas, we turn ideas into distinctive brand
               experiences through strategy, creativity, and thoughtful
               design. From concept to execution, every detail is crafted
@@ -130,9 +130,10 @@ export default function AboutPage() {
       </section>
 
       {/* What We Don't Do / What We Do */}
-      <section className="md:mb-20 mb-0">
-        <Container className="grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-0 ">
-          <div className="sm:pr-12 lg:pr-16  py-8 sm:py-8">
+      <section className="md:mb-20 mb-0 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch w-full">
+          {/* Left Side (What We Don't Do) */}
+          <div className="px-4 py-8 sm:px-8 lg:py-12 lg:pl-[max(1rem,calc((100vw-85rem)/2+1rem))] lg:pr-15">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Don&rsquo;t Do
             </h2>
@@ -150,7 +151,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="sm:pl-12 lg:pl-16 bg-[#ff0000] rounded-l-2xl  py-8 sm:py-8 px-3">
+          {/* Right Side (What We Do - Full Right Edge Touch) */}
+          <div className="bg-[#ff0000] md:mb-0 mb-8 py-8 px-6 sm:px-12 lg:py-12 lg:pl-16 lg:pr-[max(1rem,calc((100vw-90rem)/2))] lg:rounded-l-3xl w-full">
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
               What We Do
             </h2>
@@ -167,7 +169,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       <CTABanner />

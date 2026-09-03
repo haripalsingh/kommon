@@ -217,6 +217,8 @@ export default function WhatWeHelp() {
                     width={40}
                     height={40}
                     className="md:h-8 h-5 w-5 md:w-8 object-contain"
+                    loading="lazy"
+  decoding="async"
                   />
                 </div>
               ))}

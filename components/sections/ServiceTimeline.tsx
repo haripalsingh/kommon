@@ -9,21 +9,21 @@ const services = [
     title: "Brand Identity",
     description:
       "We build distinctive brand identities that bring your vision to life through strategy, design, and a consistent visual language.",
-    image: "https://aditechinfo.com/kommoncanvas/projects/brand-identity.png",
+    image: "https://aditechinfo.com/kommoncanvas/projects/Artboard-1.webp",
   },
   {
     number: "02",
     title: "Packaging Design",
     description:
       "We create packaging that catches attention, communicates value, and turns every product into a memorable brand experience.",
-    image: "https://aditechinfo.com/kommoncanvas/projects/packaging-design.png",
+    image: "https://aditechinfo.com/kommoncanvas/projects/Artboard1_1.webp",
   },
   {
     number: "03",
     title: "Creative Partnership",
     description:
       "We design scroll-stopping digital content that keeps your brand consistent, engaging, and visually relevant across every platform.",
-    image: "https://aditechinfo.com/kommoncanvas/projects/creative-partnership.png",
+    image: "https://aditechinfo.com/kommoncanvas/projects/Artboard1_2.webp",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function ServicesSection() {
               key={activeService.number}
               className="animate-[fadeIn_.5s_ease]"
             >
-              <div className="text-[72px] font-bold leading-none tracking-[-4px] text-[#ff0808]">
+              <div className="text-[40px] font-bold leading-none tracking-[-4px] text-[#ff0808]">
                 {activeService.number}
               </div>
 
@@ -123,7 +123,7 @@ export default function ServicesSection() {
                 {activeService.title}
               </h2>
 
-              <div className="relative mt-5 aspect-[1.3/1] w-full max-w-[470px] overflow-hidden rounded-[20px] bg-[#d9d9d9]">
+              <div className="relative mt-5 aspect-[10/9] w-full max-w-[500px] overflow-hidden rounded-[20px] bg-[#d9d9d9]">
                 {services.map((service, index) => (
                   <img
                     key={service.number}

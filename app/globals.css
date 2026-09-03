@@ -43,7 +43,7 @@ body {
 } */
 /* .header::before  {
   pointer-events: none;
-  background-image: url('https://aditechinfo.com/kommoncanvas/header-bg.png');
+  background-image: url('https://aditechinfo.com/kommoncanvas/header-bg.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -59,7 +59,7 @@ body {
 
 
 .leftimage{
-    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-left.png');
+    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-left.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -73,7 +73,7 @@ body {
 }
 
 .rightimage{
-    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-right.png');
+    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-right.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

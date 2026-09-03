@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 import "./globals.css";
+import CustomCursor from "@/components/sections/CustomCursor";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         <Header />
         {children}
+        <CustomCursor />
         <Footer />
       </body>
     </html>
