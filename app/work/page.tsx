@@ -32,9 +32,9 @@ export default function WorkPage() {
         titleWhite=""
         title={
           <>
-            <span className="text-white">Where </span>
-            <span className="text-red-600">Creative Thinking</span>
-            <br />
+           <span className="md:block inline"> <span className="text-white">Where </span>
+            <span className="text-red-600">Creative Thinking </span></span> 
+
             <span className="text-white">Becomes Brand Power</span>
           </>
         }

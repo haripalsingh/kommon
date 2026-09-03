@@ -77,11 +77,11 @@ export default function ContactPage() {
         description="Let's Build Something Meaningful"
       />
 
-      <section className="bg-black ">
-        <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+     <section className="bg-black pb-10 sm:pb-0">
+  <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           {/* Intro + highlights */}
           <div className="flex flex-col">
-            <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
+            <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">
               <span className="text-white">Let&rsquo;s Discuss Your</span>
               <br />
               <span className="text-red-600">Next Project!</span>

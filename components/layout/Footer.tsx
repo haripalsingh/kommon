@@ -99,7 +99,7 @@ const contactDetails = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black pb-10 md:pt-14 pt-3">
+    <footer className="bg-black pb-10 md:pt-16 pt-3">
       <Container>
         {/* Top: logo + blurb / newsletter card */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-14">
@@ -145,7 +145,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/15" />
+        <div className="mt-10 md:mt-16 border-t border-white/15" />
 
         {/* Middle: follow us + contact details — 4 equal-width columns with a
             gray divider between each (divide-x only borders between
@@ -160,7 +160,7 @@ export default function Footer() {
             of forcing the row wider, and break-words on the value lets a
             long email wrap onto a second line instead of overflowing into
             the next column. */}
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[0.9fr_1fr_1.3fr_0.8fr] lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[0.9fr_1fr_1.3fr_0.8fr] lg:items-stretch lg:gap-0 lg:divide-x lg:divide-white/15">
           <div className="flex flex-col justify-center lg:pr-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-white">
               Follow Us

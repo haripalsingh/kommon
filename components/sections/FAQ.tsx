@@ -60,11 +60,11 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-black md:py-10 py-5">
+    <section className="bg-black md:pt-16 mb-6">
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* Left: heading + accordion */}
         <div>
-          <h2 className="text-5xl font-extrabold text-white sm:text-5xl">FAQ</h2>
+          <h2 className="text-3xl font-extrabold text-white md:text-5xl">FAQ</h2>
           <p className="mt-4 max-w-xl text-neutral-400">
             Everything you need to know before starting your branding
             journey.
@@ -127,7 +127,7 @@ export default function FAQ() {
             ?
           </span>
 
-          <h3 className="relative max-w-xs text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+          <h3 className="relative max-w-xs text-3xl font-extrabold leading-tight text-white md:text-5xl">
             Still have questions
           </h3>
 

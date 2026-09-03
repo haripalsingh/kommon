@@ -26,7 +26,7 @@ export default function PageHero({
           </p>
         )}
 
-        <h1 className="mt-4 text-4xl font-extrabold leading-[1.05]  sm:text-5xl">
+        <h1 className="mt-4 text-3xl font-extrabold leading-[1.05]  sm:text-5xl">
           {title ?? (
             <>
               <span className="text-white">{titleWhite} </span>

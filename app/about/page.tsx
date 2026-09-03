@@ -108,12 +108,12 @@ export default function AboutPage() {
         />
       </div>
 
-      <section className="bg-black pb-14 pt-14 md:pb-24 md:pt-24">
+      <section className="bg-black pb-2 pt-14 md:pb-16 md:pt-16">
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
 
           <div className="lg:col-span-8">
-            <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-4xl text-center md:text-right">
+            <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl text-center md:text-right">
               Concept. Clarity.
               <br />
               Character. Craft. Creation.
@@ -130,11 +130,11 @@ export default function AboutPage() {
       </section>
 
       {/* What We Don't Do / What We Do */}
-      <section className="md:mb-20 mb-0 overflow-hidden">
+      <section className="md:mb-16 mb-0 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch w-full">
           {/* Left Side (What We Don't Do) */}
           <div className="px-4 py-8 sm:px-8 lg:py-12 lg:pl-[max(1rem,calc((100vw-85rem)/2+1rem))] lg:pr-15">
-            <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+            <h2 className="text-3xl font-extrabold text-white sm:text-5xl">
               What We Don&rsquo;t Do
             </h2>
             <div className="mt-8 space-y-8">
@@ -153,7 +153,7 @@ export default function AboutPage() {
 
           {/* Right Side (What We Do - Full Right Edge Touch) */}
           <div className="bg-[#ff0000] md:mb-0 mb-8 py-8 px-6 sm:px-12 lg:py-12 lg:pl-16 lg:pr-[max(1rem,calc((100vw-90rem)/2))] lg:rounded-l-3xl w-full">
-            <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+            <h2 className="text-3xl font-extrabold text-white sm:text-5xl">
               What We Do
             </h2>
             <div className="mt-8 space-y-8">

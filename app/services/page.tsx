@@ -89,7 +89,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Services intro */}
-      <section className="bg-black px-4 pb-5 pt-10 sm:px-8">
+      <section className="bg-black px-4 pb-0 pt-10 sm:px-8">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <h2 className="text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl">
             Our Services
@@ -99,8 +99,9 @@ export default function ServicesPage() {
             <span className="w-1/2 bg-white" />
           </div>
           <p className="mt-8 text-xl leading-relaxed text-neutral-300 sm:text-2xl">
-            Strategy, design &amp; creativity that make<br /> your brand stand
-            apart
+           <span className="md:block inline"> Strategy, design &amp; creativity that make
+            </span> <span>your brand stand
+            apart</span>
           </p>
         </div>
       </section>

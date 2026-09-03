@@ -39,11 +39,11 @@ const loopTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
   return (
-    <section className="overflow-hidden bg-black md:py-10 py-5">
+    <section className="overflow-hidden bg-black">
       <Container>
         {/* Heading */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-4xl font-extrabold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight ">
             {/* <span className="text-red-600"></span>{" "} */}
             <span className="text-white">Voices of Our Clients</span>
           </h2>
@@ -55,7 +55,7 @@ export default function Testimonials() {
       </Container>
 
       {/* Infinite scrolling row of testimonial cards — no arrows/dots, just continuous motion */}
-      <div className="relative mt-14 w-full overflow-hidden ">
+      <div className="relative mt-10 md:mt-14 w-full overflow-hidden ">
         <div className="flex w-max animate-[marquee_55s_linear_infinite] items-stretch gap-6 hover:[animation-play-state:paused] sm:gap-8">
           {loopTestimonials.map((t, i) => (
             <div

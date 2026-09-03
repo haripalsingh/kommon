@@ -82,7 +82,7 @@ export default function Hero() {
 
         {/* Founder photo, overlapping the headline */}
         <div
-          className="pointer-events-none relative z-10 -mt-[15vw] w-[48vw] max-w-[280px] transition-all duration-700 ease-out sm:-mt-[10vw] sm:w-[32vw] sm:max-w-[340px] md:-mt-[6vw] md:w-[27vw] md:max-w-[420px]"
+          className="pointer-events-none relative z-10 -mt-[6vw] w-[48vw] max-w-[280px] transition-all duration-700 ease-out sm:-mt-[10vw] sm:w-[32vw] sm:max-w-[340px] md:-mt-[6vw] md:w-[27vw] md:max-w-[420px]"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "scale(1)" : "scale(0.85)",
@@ -102,7 +102,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom row: description + CTA */}
-        <div className="relative z-20 top-[-5px] flex w-full flex-col items-center justify-between gap-6 px-2 sm:top-[-80px] sm:mt-2 sm:flex-row sm:items-end sm:gap-8 md:top-[-120px]">
+        <div className="relative z-20 top-0 mt-0 flex w-full flex-col items-center justify-between gap-6 px-2 sm:top-[-80px] sm:mt-2 sm:flex-row sm:items-end sm:gap-8 md:top-[-120px]">
           <p
             className="max-w-sm text-center text-[15px] leading-normal text-neutral-300 transition-all duration-700 ease-out sm:max-w-2/4 sm:text-left sm:text-[17px] md:max-w-md md:text-[20px]"
             style={{

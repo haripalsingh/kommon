@@ -97,7 +97,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[2rem]  p-0 sm:p-10 md:mb-0 mb-8">
+    <form onSubmit={handleSubmit} className="rounded-[2rem]  p-0 sm:p-10 md:mb-0 mb-0">
       {error && (
         <div className="mb-6 rounded-md border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-400">
           {error}
@@ -138,7 +138,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="md:mb-8 mb-3">
+        <div>
           <label htmlFor="phone" className="text-sm font-semibold text-neutral-300">
             Phone Number *
           </label>
@@ -153,7 +153,7 @@ export default function ContactForm() {
             className="mt-2 w-full rounded-md border border-white/15 bg-[#292929] px-4 py-3 text-white placeholder-neutral-500 outline-none transition-colors focus:border-red-500"
           />
         </div>
-        <div className="md:mb-8 mb-3">
+        <div>
           <label htmlFor="subject" className="text-sm font-semibold text-neutral-300">
             Subject *
           </label>

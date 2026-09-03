@@ -190,19 +190,19 @@ export default function WhatWeHelp() {
     >
       <div
         ref={stickyRef}
-        className={`flex items-center py-5 sm:py-24 ${
-          isDesktop ? "sticky top-20" : ""
+        className={`flex items-center py-6 sm:py-24 ${
+          isDesktop ? "sticky top-16" : ""
         }`}
       >
         <Container className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left column */}
           <div>
-            <h2 className="text-5xl  leading-[0.95] tracking-tight sm:text-6xl text-center md:text-left">
-              <span className="block text-white">What We Help</span>
+            <h2 className="text-3xl md:text-5xl  leading-[1.3] tracking-tight sm:text-6xl text-center md:text-left">
+              <span className="block text-white ">What We Help</span>
               <span className="block font-extrabold text-red-600">You Shape&hellip;</span>
             </h2>
 
-            <p className="mt-12 text-neutral-400 text-center md:text-left">
+            <p className="mt-4 md:mt-12 text-neutral-400 text-center md:text-left">
               Tools that we use
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3 md:justify-start text-center md:text-left">

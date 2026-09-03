@@ -5,7 +5,7 @@ import ProductMarqueeBack from "@/components/sections/ProductMarqueeBack"; // Pa
 
 const Ourlatestwork = () => {
   return (
-    <section className="overflow-hidden bg-black md:pt-24 pt-10 pb-10">
+    <section className="overflow-hidden bg-black md:pt-16 pt-10 pb-10">
       <Container>
         {/* Heading row */}
         <div className="flex flex-wrap items-center justify-between gap-4">

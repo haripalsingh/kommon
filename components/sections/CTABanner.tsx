@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function CTABanner() {
   return (
     <section className="bg-black md:mb-0 mb-5">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
-        <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+      <div className="mx-auto flex max-w-4xl flex-col items-center  text-center">
+        <h2 className="text-2xl font-bold uppercase tracking-tight sm:text-5xl">
           <span className="text-white">Have a project for us?</span>{" "}
         </h2>
        

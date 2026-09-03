@@ -47,11 +47,11 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
 export default function LatestProjects() {
   return (
-    <section className="bg-black py-5 sm:py-20">
+    <section className="bg-black pb-10 md:pb-16">
       <Container>
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl">
+          <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-5xl">
             Latest Projects
           </h2>
           <div className="mt-4 flex h-1 w-24 overflow-hidden rounded-full mx-auto">
