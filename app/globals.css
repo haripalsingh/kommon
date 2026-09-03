@@ -84,6 +84,24 @@ body {
     left: 200px;
 }
 
+  .wa-float {
+    z-index: 999;
+    color: #fff;
+    background: #25d366;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+    transition: transform .2s;
+    display: flex;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    box-shadow: 0 4px 20px #25d36666;
+}
+
 /* Thin, red-on-dark scrollbar for the Services timeline's internal
    scroll box, so it visibly reads as its own scroller rather than the
    page. Firefox via scrollbar-color/width, WebKit via the pseudo-elements. */
