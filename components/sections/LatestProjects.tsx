@@ -3,7 +3,7 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 import Container from "@/components/layout/Container";
 
-const featuredSlugs = ["tmug", "golki", "clump-maxx", "kam-fool"];
+const featuredSlugs = ["tmug", "golki", "clump-maxx", "kamfool"];
 const featured = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is NonNullable<typeof project> => Boolean(project));
