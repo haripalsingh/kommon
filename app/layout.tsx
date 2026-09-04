@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/Logo.png",
+        url: "/apple-touch-icon.png",
         width: 1200,
         height: 630,
         alt: "Kommon Canvas",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/Logo.png"],
+    images: ["/apple-touch-icon.png"],
   },
   robots: {
     index: true,
@@ -91,7 +91,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/Logo.png`,
+  logo: `${SITE_URL}/apple-touch-icon.png`,
   description: SITE_DESCRIPTION,
 };
 
