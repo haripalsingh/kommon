@@ -60,7 +60,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-black md:pt-16 mb-6">
+    <section className="bg-black pt-8 md:pt-16 mb-6">
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* Left: heading + accordion */}
         <div>

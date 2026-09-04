@@ -110,8 +110,16 @@ export default function AboutPage() {
 
       <section className="bg-black pb-2 pt-14 md:pb-16 md:pt-16">
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" />
-
+          {/* <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" /> */}
+          <div className="lg:col-span-4">
+            <Image
+              src="https://aditechinfo.com/kommoncanvas/khushi-img.webp"
+              alt="Khushi Tyagi, Founder of Kommon Canvas"
+              width={400}
+              height={300}
+              className="rounded-[2.5rem] object-cover"
+            />
+          </div>
           <div className="lg:col-span-8">
             <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl text-center md:text-right">
               Concept. Clarity.
