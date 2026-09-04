@@ -77,7 +77,7 @@ export default function Header() {
           {/* Logo — pinned left */}
           <Link href="/" className="relative z-[60] flex flex-1 items-center">
             <Image
-              src="https://aditechinfo.com/kommoncanvas/logo.svg"
+              src="../logo.svg"
               alt="Kommon Canvas"
               width={180}
               height={39}

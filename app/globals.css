@@ -33,33 +33,12 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-/* Plain `opacity` on .header would fade the whole section — headline,
-   photo, text, everything — because opacity applies to the element and
-   all its children as one flattened group. To fade only the background
-   image, the image lives on a ::before pseudo-element stacked behind the
-   real content, and only that pseudo-element gets the opacity. */
-/* .header {
-  position: relative;
-} */
-/* .header::before  {
-  pointer-events: none;
-  background-image: url('https://aditechinfo.com/kommoncanvas/header-bg.webp');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: '';
-  opacity: 0.10;
-} */
+
 
 
 
 .leftimage{
-    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-left.webp');
+    background-image: url('/who-are-left.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -73,7 +52,7 @@ body {
 }
 
 .rightimage{
-    background-image: url('https://aditechinfo.com/kommoncanvas/who-are-right.webp');
+    background-image: url('/who-are-right.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

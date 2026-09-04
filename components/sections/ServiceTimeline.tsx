@@ -9,21 +9,21 @@ const services = [
     title: "Brand Identity",
     description:
       "We build distinctive brand identities that bring your vision to life through strategy, design, and a consistent visual language.",
-    image: "https://aditechinfo.com/kommoncanvas/projects/Artboard-1.webp",
+    image: "../projects/Artboard-1.webp",
   },
   {
     number: "02",
     title: "Packaging Design",
     description:
       "We create packaging that catches attention, communicates value, and turns every product into a memorable brand experience.",
-    image: "https://aditechinfo.com/kommoncanvas/projects/Artboard1_1.webp",
+    image: "../projects/Artboard1_1.webp",
   },
   {
     number: "03",
     title: "Creative Partnership",
     description:
       "We design scroll-stopping digital content that keeps your brand consistent, engaging, and visually relevant across every platform.",
-    image: "https://aditechinfo.com/kommoncanvas/projects/Artboard1_2.webp",
+    image: "../projects/Artboard1_2.webp",
   },
 ];
 

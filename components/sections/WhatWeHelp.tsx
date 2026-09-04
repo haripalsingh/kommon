@@ -7,12 +7,12 @@ import Container from "@/components/layout/Container";
 // Real tool icons from public/logos, rather than hand-drawn letter badges —
 // keeps this list in sync with whatever's actually dropped in that folder.
 const tools = [
-  { label: "Photoshop", src: "https://aditechinfo.com/kommoncanvas/logos/ps.png" },
-  { label: "Illustrator", src: "https://aditechinfo.com/kommoncanvas/logos/ai.png" },
-  { label: "CorelDRAW", src: "https://aditechinfo.com/kommoncanvas/logos/cdr.png" },
-  { label: "XD", src: "https://aditechinfo.com/kommoncanvas/logos/xd.png" },
-  { label: "InDesign", src: "https://aditechinfo.com/kommoncanvas/logos/id.png" },
-  { label: "Figma", src: "https://aditechinfo.com/kommoncanvas/logos/figma.png" },
+  { label: "Photoshop", src: "../logos/ps.png" },
+  { label: "Illustrator", src: "../logos/ai.png" },
+  { label: "CorelDRAW", src: "../logos/cdr.png" },
+  { label: "XD", src: "../logos/xd.png" },
+  { label: "InDesign", src: "../logos/id.png" },
+  { label: "Figma", src: "../logos/figma.png" },
 ];
 
 type Service = {

@@ -27,19 +27,19 @@ export default function ServicesPage() {
   // Aapke banner images ki list (Yahan aap 3-4 images add kar sakte hain)
   const bannerImages = [
     {
-      src: "https://aditechinfo.com/kommoncanvas/projects/tea.webp",
+      src: "../projects/tea.webp",
       alt: "Kommon Canvas packaging design in the wild 1",
     },
     {
-      src: "https://aditechinfo.com/kommoncanvas/projects/kulfi.webp",
+      src: "../projects/kulfi.webp",
       alt: "Kommon Canvas packaging design in the wild 2",
     },
     {
-      src: "https://aditechinfo.com/kommoncanvas/projects/cookies.webp", 
+      src: "../projects/cookies.webp", 
       alt: "Kommon Canvas packaging design in the wild 3",
     },
     {
-      src: "https://aditechinfo.com/kommoncanvas/projects/drink.webp", 
+      src: "../projects/drink.webp", 
       alt: "Kommon Canvas packaging design in the wild 3",
     },
   ];

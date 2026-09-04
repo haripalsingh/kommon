@@ -53,7 +53,7 @@ export default function ContactForm() {
     setLoading(true);
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aditechinfo.com/kommoncanvas/mailer/send-message.php", true);
+    xhr.open("POST", "https://kommoncanvas.com/mailer/send-message.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.timeout = 10000;
 

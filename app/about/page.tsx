@@ -99,7 +99,7 @@ export default function AboutPage() {
       {/* Full-width banner photo */}
       <div className="relative aspect-[21/9] w-full overflow-hidden sm:aspect-[3/1]">
         <Image
-          src="https://aditechinfo.com/kommoncanvas/projects/about-us.webp"
+          src="../projects/about-us.webp"
           alt="Kommon Canvas packaging design in the wild"
           fill
           sizes="100vw"
@@ -113,7 +113,7 @@ export default function AboutPage() {
           {/* <div className="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-800/60 lg:col-span-4" /> */}
           <div className="lg:col-span-4">
             <Image
-              src="https://aditechinfo.com/kommoncanvas/khushi-img.webp"
+              src="../khushi-img.webp"
               alt="Khushi Tyagi, Founder of Kommon Canvas"
               width={400}
               height={300}

@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import Container from "@/components/layout/Container";
 
 const doodles = [
-  { src: "https://aditechinfo.com/kommoncanvas/logos/watermark06.svg", className: "left-[6%] top-[0%] w-20 sm:w-50", rotate: "5deg" },
-  { src: "https://aditechinfo.com/kommoncanvas/logos/watermark01.svg", className: "right-[8%] top-[4%] w-16 sm:w-40", rotate: "6deg" },
-  { src: "https://aditechinfo.com/kommoncanvas/logos/watermark05.svg", className: "left-[15%] top-[50%] w-16 sm:w-50", rotate: "4deg" },
-  { src: "https://aditechinfo.com/kommoncanvas/logos/watermark02.svg", className: "right-[10%] top-[40%] w-16 sm:w-40", rotate: "5deg" },
-  { src: "https://aditechinfo.com/kommoncanvas/logos/watermark03.svg", className: "right-[25%] bottom-[15%] w-24 sm:w-50", rotate: "-3deg" },
+  { src: "../logos/watermark06.svg", className: "left-[6%] top-[0%] w-20 sm:w-50", rotate: "5deg" },
+  { src: "../logos/watermark01.svg", className: "right-[8%] top-[4%] w-16 sm:w-40", rotate: "6deg" },
+  { src: "../logos/watermark05.svg", className: "left-[15%] top-[50%] w-16 sm:w-50", rotate: "4deg" },
+  { src: "../logos/watermark02.svg", className: "right-[10%] top-[40%] w-16 sm:w-40", rotate: "5deg" },
+  { src: "../logos/watermark03.svg", className: "right-[25%] bottom-[15%] w-24 sm:w-50", rotate: "-3deg" },
 ];
 
 function BackgroundDoodles({ mounted }: { mounted: boolean }) {
@@ -91,7 +91,7 @@ export default function Hero() {
         >
           <div style={{ animation: mounted ? "float-y 5s ease-in-out infinite" : "none" }}>
             <Image
-              src="https://aditechinfo.com/kommoncanvas/girl-element.webp"
+              src="../girl-element.webp"
               alt="Hi, I am Khushi Tyagi, Founder of Kommon Canvas"
               width={1000}
               height={987}
