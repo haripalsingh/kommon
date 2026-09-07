@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
+import Script from "next/script";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 import "./globals.css";
 import CustomCursor from "@/components/sections/CustomCursor";
-import WhatsAppFloat from '@/components/sections/Whatsapp';
-
+import WhatsAppFloat from "@/components/sections/Whatsapp";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -41,12 +42,11 @@ export const metadata: Metadata = {
   creator: "Kommon Canvas",
   publisher: "Kommon Canvas",
   applicationName: SITE_NAME,
+
   alternates: {
     canonical: "/",
   },
-  // Icons are picked up automatically by Next.js from the file-convention
-  // icons in app/ (favicon.ico, icon.png, apple-icon.png) — no manual
-  // `icons` field needed here, and adding one would duplicate the tags.
+
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -63,12 +63,14 @@ export const metadata: Metadata = {
     ],
     locale: "en_IN",
   },
+
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: SITE_DESCRIPTION,
     images: ["/apple-touch-icon.png"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -102,15 +104,41 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${poppins.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black">
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BP3CJ93W1Y"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-BP3CJ93W1Y');
+          `}
+        </Script>
+
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
+
         <Header />
+
         {children}
+
         <CustomCursor />
+
         <Footer />
+
         <WhatsAppFloat />
+
       </body>
     </html>
   );
