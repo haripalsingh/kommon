@@ -7,7 +7,7 @@ const marqueeImages = [
 { src: "../projects/home-slider/homeimg03.webp", alt: "homeimg03" },
 { src: "../projects/home-slider/homeimg04.webp", alt: "homeimg04" },
 { src: "../projects/home-slider/homeimg05.webp", alt: "homeimg05" },
-{ src: "../projects/home-slider/homeimg06.webp", alt: "homeimg06" },
+// { src: "../projects/home-slider/homeimg06.webp", alt: "homeimg06" },
 { src: "../projects/home-slider/homeimg07.webp", alt: "homeimg07" },
 { src: "../projects/home-slider/homeimg08.webp", alt: "homeimg08" },
 { src: "../projects/home-slider/homeimg10.webp", alt: "homeimg10" },
