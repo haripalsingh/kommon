@@ -10,14 +10,13 @@ const marqueeImages = [
 { src: "../projects/home-slider/homeimg06.webp", alt: "homeimg06" },
 { src: "../projects/home-slider/homeimg07.webp", alt: "homeimg07" },
 { src: "../projects/home-slider/homeimg08.webp", alt: "homeimg08" },
-// { src: "../projects/home-slider/homeimg09.webp", alt: "homeimg09" },
 { src: "../projects/home-slider/homeimg10.webp", alt: "homeimg10" },
 // { src: "../projects/home-slider/homeimg11.webp", alt: "homeimg11" },
 // { src: "../projects/home-slider/homeimg12.webp", alt: "homeimg12" },
 { src: "../projects/home-slider/homeimg13.webp", alt: "homeimg13" },
-{ src: "../projects/home-slider/homeimg14.webp", alt: "homeimg14" },
-{ src: "../projects/home-slider/homeimg15.webp", alt: "homeimg15" },
-{ src: "../projects/home-slider/homeimg16.webp", alt: "homeimg16" },
+// { src: "../projects/home-slider/homeimg14.webp", alt: "homeimg14" },
+// { src: "../projects/home-slider/homeimg15.webp", alt: "homeimg15" },
+// { src: "../projects/home-slider/homeimg16.webp", alt: "homeimg16" },
 ];
 
 

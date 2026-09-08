@@ -2,22 +2,19 @@ import Image from "next/image";
 
 // Apni pasand ki images yahin add/edit/remove karein
 const marqueeImages = [
-{ src: "../projects/work/work-img01.webp", alt: "work-img01" },
-{ src: "../projects/work/work-img02.webp", alt: "work-img02" },
-{ src: "../projects/work/work-img03.webp", alt: "work-img03" },
-{ src: "../projects/work/work-img04.webp", alt: "work-img04" },
-{ src: "../projects/work/work-img05.webp", alt: "work-img05" },
-{ src: "../projects/work/work-img06.webp", alt: "work-img06" },
-{ src: "../projects/work/work-img07.webp", alt: "work-img07" },
-{ src: "../projects/work/work-img08.webp", alt: "work-img08" },
-{ src: "../projects/work/work-img09.webp", alt: "work-img09" },
+
+
+
+{ src: "../projects/work/homeimg7.webp", alt: "work-img01" },
+{ src: "../projects/work/homeimg08.webp", alt: "work-img02" },
+{ src: "../projects/work/homeimg9.webp", alt: "work-img03" },
+{ src: "../projects/work/work-img1.webp", alt: "work-img04" },
+{ src: "../projects/work/work-img2.webp", alt: "work-img05" },
+{ src: "../projects/work/work-img3.webp", alt: "work-img06" },
+{ src: "../projects/work/work-img4.webp", alt: "work-img07" },
+{ src: "../projects/work/work-img5.webp", alt: "work-img08" },
+{ src: "../projects/work/work-img06.webp", alt: "work-img09" },
 { src: "../projects/work/work-img10.webp", alt: "work-img10" },
-{ src: "../projects/work/work-img11.webp", alt: "work-img11" },
-{ src: "../projects/work/work-img12.webp", alt: "work-img12" },
-{ src: "../projects/work/work-img13.webp", alt: "work-img13" },
-{ src: "../projects/work/work-img14.webp", alt: "work-img14" },
-{ src: "../projects/work/work-img15.webp", alt: "work-img15" },
-{ src: "../projects/work/work-img16.webp", alt: "work-img16" },
 ];
 
 export default function ProductMarquee() {
