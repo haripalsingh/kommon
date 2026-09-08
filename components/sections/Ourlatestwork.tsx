@@ -1,7 +1,7 @@
 import Link from "next/link";
 // import { projects } from "@/lib/projects";
 import Container from "@/components/layout/Container";
-import ProductMarqueeBack from "@/components/sections/ProductMarqueeBack"; // Path check kar lein
+import ProductMarqueeBack from "@/components/sections/ProductMarqueeBackBack"; // Path check kar lein
 
 const Ourlatestwork = () => {
   return (

@@ -1,6 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// 1. Sign up at https://web3forms.com (free), verify your email.
+// 2. Paste the Access Key you get into WEB3FORMS_ACCESS_KEY below.
+const WEB3FORMS_ACCESS_KEY = "bcdf35e9-0c12-440f-9222-3c66f5d7d8bc";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -13,6 +17,12 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (!submitted) return;
+    const timer = setTimeout(() => setSubmitted(false), 5000);
+    return () => clearTimeout(timer);
+  }, [submitted]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,57 +42,68 @@ export default function ContactForm() {
       setError("Please fill all fields.");
       return false;
     }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email)) {
+
+    const nameRegex = /^[A-Za-z\s.'-]+$/;
+    if (!nameRegex.test(form.fullName.trim())) {
+      setError("Name should not contain numbers or special characters.");
+      return false;
+    }
+    if (form.fullName.trim().length < 2) {
+      setError("Please enter your full name.");
+      return false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(form.email.trim())) {
       setError("Please enter a valid email address.");
       return false;
     }
+
     const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(form.phone)) {
-      setError("Please enter a valid 10-digit phone number.");
+    if (!phoneRegex.test(form.phone.trim())) {
+      setError("Phone number must be exactly 10 digits.");
       return false;
     }
+
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     if (!validate()) return;
 
     setLoading(true);
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://kommoncanvas.com/mailer/send-message.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.timeout = 10000;
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Enquiry: ${form.fullName} - ${form.subject}`,
+          from_name: "Kommon Canvas Website",
+          name: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          enquiry_subject: form.subject,
+          message: form.message,
+        }),
+      });
 
-    xhr.onload = () => {
-      setLoading(false);
-      try {
-        const result = JSON.parse(xhr.responseText);
-        if (result.success) {
-          setSubmitted(true);
-          setForm({ fullName: "", email: "", phone: "", subject: "", message: "" });
-        } else {
-          setError(result.message || "Failed to send message.");
-        }
-      } catch {
-        setError("Something went wrong. Please try again.");
+      const result = await res.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setForm({ fullName: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        setError(result.message || "Failed to send message.");
       }
-    };
-
-    xhr.onerror = () => {
-      setLoading(false);
+    } catch {
       setError("Network error. Please try again.");
-    };
-
-    xhr.ontimeout = () => {
+    } finally {
       setLoading(false);
-      setError("Request timed out. Please try again.");
-    };
-
-    xhr.send(JSON.stringify(form));
+    }
   };
 
   if (submitted) {
