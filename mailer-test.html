@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mailer Test</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+  button { padding: 12px 24px; font-size: 16px; cursor: pointer; }
+  pre { background: #f4f4f4; padding: 16px; border-radius: 8px; white-space: pre-wrap; word-break: break-all; }
+</style>
+</head>
+<body>
+  <h2>Mailer Endpoint Test</h2>
+  <p>Yeh button dabane par test data <code>/mailer/send-message.php</code> par bheja jayega aur poora raw response neeche dikhega.</p>
+  <button onclick="runTest()">Test Bhejo</button>
+  <p id="status"></p>
+  <pre id="output">(result yahan aayega)</pre>
+
+  <script>
+    async function runTest() {
+      document.getElementById('status').textContent = 'Sending...';
+      document.getElementById('output').textContent = '';
+      const started = Date.now();
+      try {
+        const res = await fetch('/mailer/send-message.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName: 'Test User',
+            email: 'test@example.com',
+            phone: '9876543210',
+            subject: 'Test Subject',
+            message: 'This is a test message.'
+          })
+        });
+        const text = await res.text();
+        const elapsed = ((Date.now() - started) / 1000).toFixed(1);
+        document.getElementById('status').textContent =
+          `HTTP Status: ${res.status} | Time: ${elapsed}s`;
+        document.getElementById('output').textContent = text || '(empty response)';
+      } catch (err) {
+        const elapsed = ((Date.now() - started) / 1000).toFixed(1);
+        document.getElementById('status').textContent = `Failed after ${elapsed}s`;
+        document.getElementById('output').textContent = 'Network/JS error: ' + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
