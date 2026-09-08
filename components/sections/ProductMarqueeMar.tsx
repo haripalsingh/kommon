@@ -10,7 +10,7 @@ const marqueeImages = [
 // { src: "../projects/home-slider/homeimg06.webp", alt: "homeimg06" },
 { src: "../projects/home-slider/homeimg07.webp", alt: "homeimg07" },
 { src: "../projects/home-slider/homeimg08.webp", alt: "homeimg08" },
-{ src: "../projects/home-slider/homeimg10.webp", alt: "homeimg10" },
+// { src: "../projects/home-slider/homeimg10.webp", alt: "homeimg10" },
 // { src: "../projects/home-slider/homeimg11.webp", alt: "homeimg11" },
 // { src: "../projects/home-slider/homeimg12.webp", alt: "homeimg12" },
 { src: "../projects/home-slider/homeimg13.webp", alt: "homeimg13" },
