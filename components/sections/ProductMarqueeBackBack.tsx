@@ -5,16 +5,16 @@ const marqueeImages = [
 
 
 
-{ src: "../projects/work/homeimg7.webp", alt: "work-img01" },
-{ src: "../projects/work/homeimg08.webp", alt: "work-img02" },
-{ src: "../projects/work/homeimg9.webp", alt: "work-img03" },
-{ src: "../projects/work/work-img1.webp", alt: "work-img04" },
-{ src: "../projects/work/work-img2.webp", alt: "work-img05" },
-{ src: "../projects/work/work-img3.webp", alt: "work-img06" },
-{ src: "../projects/work/work-img4.webp", alt: "work-img07" },
-{ src: "../projects/work/work-img5.webp", alt: "work-img08" },
-{ src: "../projects/work/work-img06.webp", alt: "work-img09" },
-{ src: "../projects/work/work-img10.webp", alt: "work-img10" },
+{ src: "/projects/work/homeimg7.webp", alt: "work-img01" },
+{ src: "/projects/work/homeimg08.webp", alt: "work-img02" },
+{ src: "/projects/work/homeimg9.webp", alt: "work-img03" },
+{ src: "/projects/work/work-img1.webp", alt: "work-img04" },
+{ src: "/projects/work/work-img2.webp", alt: "work-img05" },
+{ src: "/projects/work/work-img3.webp", alt: "work-img06" },
+{ src: "/projects/work/work-img4.webp", alt: "work-img07" },
+{ src: "/projects/work/work-img5.webp", alt: "work-img08" },
+{ src: "/projects/work/work-img06.webp", alt: "work-img09" },
+{ src: "/projects/work/work-img10.webp", alt: "work-img10" },
 ];
 
 export default function ProductMarquee() {

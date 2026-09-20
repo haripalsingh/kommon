@@ -1,0 +1,67 @@
+# ------------------------------------------------------------
+# kommoncanvas.com - Next.js static export (trailingSlash: false)
+# Lives in /public so it is copied into /out on every build.
+# Clean URLs, no trailing slash:  /contact  (not /contact/)
+# ------------------------------------------------------------
+
+Options -Indexes
+DirectoryIndex index.html
+
+# IMPORTANT: stops Apache redirecting /contact -> /contact/ when a folder
+# named "contact" exists. That redirect is what caused the 403 Forbidden.
+DirectorySlash Off
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ---- www -> non-www (keeps http/https as requested) ----
+  RewriteCond %{HTTP_HOST} ^www\.kommoncanvas\.com$ [NC]
+  RewriteRule ^(.*)$ %{REQUEST_SCHEME}://kommoncanvas.com/$1 [L,R=301]
+
+  # ---- http -> https ----
+  # Canonicals, sitemap and OG tags all use https://kommoncanvas.com, so once the
+  # SSL certificate is active on the host, UNCOMMENT these 3 lines:
+  # RewriteCond %{HTTPS} off
+  # RewriteCond %{HTTP_HOST} ^kommoncanvas\.com$ [NC]
+  # RewriteRule ^(.*)$ https://kommoncanvas.com/$1 [L,R=301]
+
+  # ---- 1. Remove trailing slash: /contact/ -> /contact (301) ----
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+  # ---- 2. Serve /contact from contact.html ----
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  # ---- 3. Fallback: serve /folder from folder/index.html if it exists ----
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+)$ $1/index.html [L]
+</IfModule>
+
+# ---- Compression ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/xml text/plain
+  AddOutputFilterByType DEFLATE application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---- Caching for static assets ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# ---- Security headers ----
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>

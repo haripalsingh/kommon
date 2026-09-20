@@ -7,12 +7,12 @@ import Container from "@/components/layout/Container";
 // Real tool icons from public/logos, rather than hand-drawn letter badges —
 // keeps this list in sync with whatever's actually dropped in that folder.
 const tools = [
-  { label: "Photoshop", src: "../logos/ps.png" },
-  { label: "Illustrator", src: "../logos/ai.png" },
-  { label: "CorelDRAW", src: "../logos/cdr.png" },
-  { label: "XD", src: "../logos/xd.png" },
-  { label: "InDesign", src: "../logos/id.png" },
-  { label: "Figma", src: "../logos/figma.png" },
+  { label: "Photoshop", src: "/logos/ps.png" },
+  { label: "Illustrator", src: "/logos/ai.png" },
+  { label: "CorelDRAW", src: "/logos/cdr.png" },
+  { label: "XD", src: "/logos/xd.png" },
+  { label: "InDesign", src: "/logos/id.png" },
+  { label: "Figma", src: "/logos/figma.png" },
 ];
 
 type Service = {

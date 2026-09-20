@@ -25,7 +25,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false, // /contact (contact.html) instead of /contact/ (contact/index.html)
   typescript: {
     ignoreBuildErrors: true,  
   },
