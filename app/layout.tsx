@@ -24,11 +24,14 @@ const DEFAULT_TITLE = "Kommon Canvas | Packaging & Brand Design Agency";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+
   title: {
     default: DEFAULT_TITLE,
     template: "%s | Kommon Canvas",
   },
+
   description: SITE_DESCRIPTION,
+
   keywords: [
     "packaging design agency",
     "brand identity design",
@@ -38,10 +41,15 @@ export const metadata: Metadata = {
     "digital experience design",
     "Kommon Canvas",
   ],
+
   authors: [{ name: "Kommon Canvas" }],
   creator: "Kommon Canvas",
   publisher: "Kommon Canvas",
   applicationName: SITE_NAME,
+
+  verification: {
+    google: "rs0wCEDIr4gjFgt7HxnAFhB108NFHAcFtqUU1hhJR3Q",
+  },
 
   alternates: {
     canonical: "/",
@@ -97,7 +105,9 @@ const organizationJsonLd = {
   description: SITE_DESCRIPTION,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: LayoutProps<"/">) {
   return (
     <html
       lang="en"
@@ -114,7 +124,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+
             gtag('js', new Date());
 
             gtag('config', 'G-BP3CJ93W1Y');
