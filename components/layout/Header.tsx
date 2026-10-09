@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Container from "@/components/layout/Container";
+import ServicesMegaMenu from "@/components/layout/ServicesMegaMenu";
+import MobileServicesMenu from "@/components/layout/MobileServicesMenu";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -31,7 +33,15 @@ export default function Header() {
   // slightly longer than `open` so the closing transition can play out
   // instead of the panel just vanishing.
   const [rendered, setRendered] = useState(false);
+  // Desktop mega menu (hover) + mobile accordion for Services
+  const [megaOpen, setMegaOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
+
+  // Route change hone par menus band kar do
+  useEffect(() => {
+    setMegaOpen(false);
+  }, [pathname]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -42,7 +52,10 @@ export default function Header() {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
-      const t = setTimeout(() => setRendered(false), 350);
+      const t = setTimeout(() => {
+        setRendered(false);
+        setMobileServicesOpen(false);
+      }, 350);
       return () => clearTimeout(t);
     }
   }, [open]);
@@ -88,18 +101,45 @@ export default function Header() {
 
           {/* Desktop nav — centered */}
           <nav className="hidden flex-1 items-center justify-center gap-9 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive(link.href) ? "page" : undefined}
-                className={`text-[18px] font-normal  tracking-wide transition-colors ${
-                  isActive(link.href) ? "text-white" : "text-white hover:text-[#ff0000]"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.name === "Services" ? (
+                <div
+                  key={link.href}
+                  onMouseEnter={() => setMegaOpen(true)}
+                  onMouseLeave={() => setMegaOpen(false)}
+                  onFocus={() => setMegaOpen(true)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) setMegaOpen(false);
+                  }}
+                  // py-3 -my-3: hover area thoda bada taaki menu tak jaate hue band na ho
+                  className="-my-8 py-8"
+                >
+                  <Link
+                    href={link.href}
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={megaOpen}
+                    className={`text-[18px] font-normal tracking-wide transition-colors ${
+                      megaOpen ? "text-[#ff0000]" : "text-white hover:text-[#ff0000]"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                  {megaOpen && <ServicesMegaMenu onNavigate={() => setMegaOpen(false)} />}
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive(link.href) ? "page" : undefined}
+                  className={`text-[18px] font-normal  tracking-wide transition-colors ${
+                    isActive(link.href) ? "text-white" : "text-white hover:text-[#ff0000]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </nav>
 
           {/* Book a call + mobile toggle — pinned right */}
@@ -157,14 +197,53 @@ export default function Header() {
 
             {/* Panel */}
             <div
-              className="fixed inset-x-0 top-0 z-50 origin-top border-b border-white/10 bg-neutral-950/98 pb-8 pt-28 shadow-2xl backdrop-blur-xl transition-all duration-350 ease-out lg:hidden"
+              className="fixed inset-x-0 top-0 z-50 max-h-dvh origin-top overflow-y-auto overscroll-contain border-b border-white/10 bg-neutral-950/98 pb-8 pt-28 shadow-2xl backdrop-blur-xl transition-all duration-350 ease-out lg:hidden"
               style={{
                 opacity: open ? 1 : 0,
                 transform: open ? "translateY(0) scaleY(1)" : "translateY(-8px) scaleY(0.98)",
               }}
             >
               <Container className="flex flex-col gap-1">
-                {navLinks.map((link, i) => (
+                {navLinks.map((link, i) =>
+                  link.name === "Services" ? (
+                    <div
+                      key={link.href}
+                      className="border-b border-white/5 transition-all duration-300 ease-out"
+                      style={{
+                        opacity: open ? 1 : 0,
+                        transform: open ? "translateX(0)" : "translateX(-16px)",
+                        transitionDelay: open ? `${100 + i * 60}ms` : "0ms",
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen((v) => !v)}
+                        aria-expanded={mobileServicesOpen}
+                        className={`flex w-full items-center justify-between py-4 text-2xl font-bold uppercase tracking-wide ${
+                          isActive(link.href) ? "text-[#ff0000]" : "text-white"
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        <span
+                          className={`text-lg transition-transform duration-300 ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                        >
+                          &#9662;
+                        </span>
+                      </button>
+
+                      <div
+                        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                          mobileServicesOpen ? "grid-rows-[1fr] pb-4" : "grid-rows-[0fr]"
+                        }`}
+                      >
+                        <div className="min-h-0 overflow-hidden">
+                          <MobileServicesMenu onNavigate={() => setOpen(false)} />
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -190,7 +269,8 @@ export default function Header() {
                       &rarr;
                     </span>
                   </Link>
-                ))}
+                  )
+                )}
 
                 <Link
                   href="/contact"

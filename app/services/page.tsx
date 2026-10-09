@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 
+
 // Swiper styles import karein
 import "swiper/css";
 import "swiper/css/effect-fade";
